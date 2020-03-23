@@ -1,3 +1,32 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "My New Hugo Site"
+
+[taxonomies]
+    tag = "tags"
+
+[permalinks]
+    blog = "/:filename/"
+
+# See https://feathericons.com/
+# The value of pre is the icon name
+[menu]
+  [[menu.main]]
+    name = "Home"
+    pre = "mdi mdi-home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Blog"
+    pre = "mdi mdi-file-document-edit-outline"
+    url = "/blog/"
+    weight = 2
+  [[menu.main]]
+    name = "Tags"
+    pre = "mdi mdi-tag-outline"
+    url = "/tags/"
+    weight = 3
+
+[params]
+    ddateFormat = "Jan 2, 2006"
+    homeText = "You just made a Hugo blog from scratch"
