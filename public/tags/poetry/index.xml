@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>poetry on My New Hugo Site</title>
+    <title>poetry on RogerGallart Personal Website</title>
     <link>http://example.org/tags/poetry/</link>
-    <description>Recent content in poetry on My New Hugo Site</description>
+    <description>Recent content in poetry on RogerGallart Personal Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Mar 2020 22:35:39 +0100</lastBuildDate>
@@ -13,30 +13,30 @@
     
     <item>
       <title>Post Number Three</title>
-      <link>http://example.org/post-number-three/</link>
+      <link>http://example.org/article/post-number-three/</link>
       <pubDate>Sun, 22 Mar 2020 22:35:39 +0100</pubDate>
       
-      <guid>http://example.org/post-number-three/</guid>
+      <guid>http://example.org/article/post-number-three/</guid>
       <description>Qui reprehenderit fugiat eiusmod commodo eiusmod consequat anim consequat dolore irure eiusmod. Anim adipisicing non ex exercitation voluptate occaecat aliqua quis in anim. Eu exercitation labore officia in ullamco labore adipisicing enim deserunt ut eiusmod do ut. Adipisicing nisi exercitation ad est labore culpa. Fugiat amet officia ad cillum reprehenderit.
 Anim consectetur adipisicing occaecat quis. Aliquip ea culpa amet in labore nostrud incididunt Lorem. Aute dolor mollit exercitation eu nostrud adipisicing aute minim nisi dolore fugiat amet cillum.</description>
     </item>
     
     <item>
       <title>Post Number Two</title>
-      <link>http://example.org/post-number-two/</link>
+      <link>http://example.org/article/post-number-two/</link>
       <pubDate>Sun, 22 Mar 2020 22:35:16 +0100</pubDate>
       
-      <guid>http://example.org/post-number-two/</guid>
+      <guid>http://example.org/article/post-number-two/</guid>
       <description>Elit laborum occaecat dolor aute voluptate consequat labore voluptate officia. Anim mollit nostrud fugiat culpa labore. Aliqua laboris pariatur quis cupidatat quis ea ad.
 Do proident esse non aliquip duis nisi officia commodo fugiat. Tempor nostrud id do irure fugiat veniam in consectetur cupidatat deserunt. Consectetur sit dolore veniam ex ut. Eiusmod incididunt nisi ea ut.</description>
     </item>
     
     <item>
       <title>If by Rudyard Kipling</title>
-      <link>http://example.org/if-by-rudyard-kipling/</link>
+      <link>http://example.org/article/if-by-rudyard-kipling/</link>
       <pubDate>Sun, 22 Mar 2020 22:09:04 +0100</pubDate>
       
-      <guid>http://example.org/if-by-rudyard-kipling/</guid>
+      <guid>http://example.org/article/if-by-rudyard-kipling/</guid>
       <description>Veniam occaecat do proident magna do laborum eiusmod. Tempor aute exercitation dolore ea ad ut voluptate duis deserunt velit amet non anim labore. Sit culpa reprehenderit esse pariatur dolor consectetur amet occaecat esse magna. Ex ad pariatur ullamco aliquip et culpa eu. Sint quis ut sunt nulla excepteur eu in.
 Magna mollit sit voluptate labore anim magna ex. Nulla pariatur excepteur pariatur ut. Proident aute irure nostrud duis magna Lorem.</description>
     </item>

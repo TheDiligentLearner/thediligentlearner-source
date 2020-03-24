@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>time on My New Hugo Site</title>
+    <title>time on RogerGallart Personal Website</title>
     <link>http://example.org/tags/time/</link>
-    <description>Recent content in time on My New Hugo Site</description>
+    <description>Recent content in time on RogerGallart Personal Website</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 22 Mar 2020 22:35:16 +0100</lastBuildDate>
@@ -13,10 +13,10 @@
     
     <item>
       <title>Post Number Two</title>
-      <link>http://example.org/post-number-two/</link>
+      <link>http://example.org/article/post-number-two/</link>
       <pubDate>Sun, 22 Mar 2020 22:35:16 +0100</pubDate>
       
-      <guid>http://example.org/post-number-two/</guid>
+      <guid>http://example.org/article/post-number-two/</guid>
       <description>Elit laborum occaecat dolor aute voluptate consequat labore voluptate officia. Anim mollit nostrud fugiat culpa labore. Aliqua laboris pariatur quis cupidatat quis ea ad.
 Do proident esse non aliquip duis nisi officia commodo fugiat. Tempor nostrud id do irure fugiat veniam in consectetur cupidatat deserunt. Consectetur sit dolore veniam ex ut. Eiusmod incididunt nisi ea ut.</description>
     </item>
