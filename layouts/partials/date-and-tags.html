@@ -1,8 +1,15 @@
 {{ $dateTime := .PublishDate.Format "2006-01-02" }}
+{{ $modDateTime := .PublishDate.Format "2006-01-02"}}
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
 
+Published:
 <span class="mdi mdi-calendar-today"></span> <time datetime="{{ $dateTime }}">
     {{ .PublishDate.Format $dateFormat }}
+</time>
+<br>
+Last modified:
+<span class="mdi mdi-calendar-today"></span> <time datetime="{{ $modDateTime }}">
+    {{ .Lastmod.Format $dateFormat }}
 </time>
 
 {{ with .Params.tags }}

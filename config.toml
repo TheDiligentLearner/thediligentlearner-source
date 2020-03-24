@@ -5,8 +5,8 @@ title = "RogerGallart Personal Website"
 [taxonomies]
     tag = "tags"
 
-[permalinks]
-    blog = "/:filename/"
+#[permalinks]
+#    blog = "/:filename/"
 
 [params]
     ddateFormat = "Jan 2, 2006"
@@ -26,17 +26,17 @@ title = "RogerGallart Personal Website"
   [[menu.main]]
     name = "Articles"
     pre = "mdi mdi-file-document-edit-outline"
-    url = "/article/"
+    url = "/articles/"
     weight = 3
   [[menu.main]]
     name = "Projects"
     pre = "mdi mdi-lightbulb-on-outline"
-    url = "/project/"
+    url = "/projects/"
     weight = 4
   [[menu.main]]
     name = "Resources"
     pre = "mdi mdi-book-open-page-variant"
-    url = "/resource/"
+    url = "/resources/"
     weight = 5
   [[menu.main]]
     name = "Pics and Trips"
