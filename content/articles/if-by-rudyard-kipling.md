@@ -1,6 +1,7 @@
 ---
 title: "If by Rudyard Kipling"
 date: 2020-03-22T22:09:04+01:00
+lastmod: 2020-03-28T22:09:04+01:00
 tags: ["poetry", "life"]
 draft: false
 ---

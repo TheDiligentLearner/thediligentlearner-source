@@ -1,16 +1,19 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "RogerGallart Personal Website"
+#enableGitInfo = true
+
+[permalinks]
+  articles = "/:section/:year/:filename/"
 
 [taxonomies]
-    tag = "tags"
-
-#[permalinks]
-#    blog = "/:filename/"
-
+  category = "categories"
+  tag = "tags"
+  series = "series"
+ 
 [params]
-    ddateFormat = "Jan 2, 2006"
-    homeText = "You just made a Hugo blog from scratch"
+  ddateFormat = "Jan 2, 2006"
+  homeText = "You just made a Hugo blog from scratch"
 
 [menu]
   [[menu.main]]
@@ -19,37 +22,58 @@ title = "RogerGallart Personal Website"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "About me"
+    name = "About"
     pre = "mdi mdi-file-document-edit-outline"
-    url = "/about-me/"
+    url = "/about/"
     weight = 2  
+  
   [[menu.main]]
+    identifier = "articles"
     name = "Articles"
     pre = "mdi mdi-file-document-edit-outline"
     url = "/articles/"
     weight = 3
+
+    [[menu.main]]
+      parent = "articles"
+      name = "Browse"
+      pre = "mdi mdi-file-document-edit-outline"
+      url = "/tags/"
+      weight = 4  
+
+    [[menu.main]]
+      parent = "articles"
+      name = "Series"
+      pre = "mdi mdi-file-document-edit-outline"
+      url = "/series/"
+      weight = 5  
+
   [[menu.main]]
     name = "Projects"
     pre = "mdi mdi-lightbulb-on-outline"
     url = "/projects/"
-    weight = 4
+    weight = 6
+
   [[menu.main]]
     name = "Resources"
     pre = "mdi mdi-book-open-page-variant"
     url = "/resources/"
-    weight = 5
+    weight = 7
+
   [[menu.main]]
     name = "Pics and Trips"
     pre = "mdi mdi-airplane"
     url = "/pics-and-trips/"
-    weight = 6
+    weight = 8
+
   [[menu.main]]
     name = "Contact"
     pre = "mdi mdi-email-outline"
     url = "/contact/"
-    weight = 7 
-  [[menu.main]]
-    name = "Tags"
-    pre = "mdi mdi-tag-outline"
-    url = "/tags/"
-    weight = 8
+    weight = 9
+
+#  [[menu.main]]
+#    name = "Tags"
+#    pre = "mdi mdi-tag-outline"
+#    url = "/tags/"
+#    weight = 10
