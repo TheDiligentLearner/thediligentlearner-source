@@ -1,6 +1,6 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "RogerGallart Personal Website"
 
 [taxonomies]
     tag = "tags"
@@ -8,8 +8,10 @@ title = "My New Hugo Site"
 [permalinks]
     blog = "/:filename/"
 
-# See https://feathericons.com/
-# The value of pre is the icon name
+[params]
+    ddateFormat = "Jan 2, 2006"
+    homeText = "You just made a Hugo blog from scratch"
+
 [menu]
   [[menu.main]]
     name = "Home"
@@ -17,16 +19,37 @@ title = "My New Hugo Site"
     url = "/"
     weight = 1
   [[menu.main]]
-    name = "Blog"
+    name = "About me"
     pre = "mdi mdi-file-document-edit-outline"
-    url = "/blog/"
-    weight = 2
+    url = "/about-me/"
+    weight = 2  
+  [[menu.main]]
+    name = "Articles"
+    pre = "mdi mdi-file-document-edit-outline"
+    url = "/article/"
+    weight = 3
+  [[menu.main]]
+    name = "Projects"
+    pre = "mdi mdi-lightbulb-on-outline"
+    url = "/project/"
+    weight = 4
+  [[menu.main]]
+    name = "Resources"
+    pre = "mdi mdi-book-open-page-variant"
+    url = "/resource/"
+    weight = 5
+  [[menu.main]]
+    name = "Pics and Trips"
+    pre = "mdi mdi-airplane"
+    url = "/pics-and-trips/"
+    weight = 6
+  [[menu.main]]
+    name = "Contact"
+    pre = "mdi mdi-email-outline"
+    url = "/contact/"
+    weight = 7 
   [[menu.main]]
     name = "Tags"
     pre = "mdi mdi-tag-outline"
     url = "/tags/"
-    weight = 3
-
-[params]
-    ddateFormat = "Jan 2, 2006"
-    homeText = "You just made a Hugo blog from scratch"
+    weight = 8
