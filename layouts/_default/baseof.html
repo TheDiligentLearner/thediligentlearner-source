@@ -4,6 +4,12 @@
 
 <body>
     {{ partial "nav.html" .}}
+   
+    {{/* Do not show breadcrumb in Homepage */}}
+    {{if not .IsHome}}  
+        {{ partial "breadcrumb.html" . }}
+    {{ end }}
+   
     {{ block "main" . }}{{ end }}
 
 </body>
