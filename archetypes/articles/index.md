@@ -10,6 +10,5 @@ series_weight: 0
 tocrender: true
 tocminwords: 400
 draft: false
-#Use the more tag to indicate where the summary finishes
+summary: ""
 ---
-<!--more-->

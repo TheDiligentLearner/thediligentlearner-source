@@ -4,10 +4,3 @@
             <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
     {{ end }}
 </ul>
-
-<h2>Browse articles by tag:</h2>
-<ul>
-    {{ range .Site.Taxonomies.tags }}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
-    {{ end }}
-</ul>

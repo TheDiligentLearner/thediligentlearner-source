@@ -1,4 +1,5 @@
 {{ define "main" }}
+
 <section id="">
     <ul>
         {{ range $key, $taxonomy := .Site.Taxonomies.series.Alphabetical }}
@@ -11,5 +12,6 @@
         {{ end }}
     </ul>
 </section>
+
 
 {{ end }}

@@ -1,0 +1,6 @@
+<h2>Browse articles by series</h2>
+<ul>
+    {{ range .Site.Taxonomies.series }}
+            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+</ul>

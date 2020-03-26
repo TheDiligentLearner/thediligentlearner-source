@@ -2,16 +2,25 @@
 {{ $modDateTime := .PublishDate.Format "2006-01-02"}}
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
 
-Published:
-<span class="mdi mdi-calendar-today"></span> <time datetime="{{ $dateTime }}">
-    {{ .PublishDate.Format $dateFormat }}
-</time>
-<br>
 Last modified:
 <span class="mdi mdi-calendar-today"></span> <time datetime="{{ $modDateTime }}">
     {{ .Lastmod.Format $dateFormat }}
 </time>
+<br>
+Created:
+<span class="mdi mdi-calendar-today"></span> <time datetime="{{ $dateTime }}">
+    {{ .PublishDate.Format $dateFormat }}
+</time>
 
+
+{{ with .Params.categories }}
+    <br>
+    <span class="mdi mdi-folder-outline"></span>
+    {{ range . }}
+        {{ $href := print (absURL "categories/") (urlize .) }}
+        <a class="" href="{{ $href }}">{{ . }}</a>
+    {{ end }}
+{{ end }}
 {{ with .Params.tags }}
     <br>
     <span class="mdi mdi-tag-outline"></span>

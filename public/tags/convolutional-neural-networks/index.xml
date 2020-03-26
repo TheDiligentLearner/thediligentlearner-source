@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>convolutional neural networks on RogerGallart Personal Website</title>
+    <link>http://example.org/tags/convolutional-neural-networks/</link>
+    <description>Recent content in convolutional neural networks on RogerGallart Personal Website</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 25 Mar 2020 00:07:44 +0100</lastBuildDate>
+    
+	<atom:link href="http://example.org/tags/convolutional-neural-networks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Convolutional Neural Networks</title>
+      <link>http://example.org/articles/2020/convolutional-neural-networks/</link>
+      <pubDate>Wed, 25 Mar 2020 00:07:44 +0100</pubDate>
+      
+      <guid>http://example.org/articles/2020/convolutional-neural-networks/</guid>
+      <description>&lt;h2 id=&#34;title-1&#34;&gt;Title 1&lt;/h2&gt;
+&lt;p&gt;Eu consectetur duis excepteur occaecat duis eu amet sint voluptate elit sunt cupidatat proident sint. Ex irure qui reprehenderit consectetur ad velit id enim reprehenderit dolor mollit. Consequat veniam fugiat excepteur ipsum officia qui aute nisi fugiat reprehenderit et sint labore.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://example.org/series/2-deep-learning-for-beginners/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/cnn/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/convolutional-neural-networks/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/convolutional-neural-networks/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/deep-learning/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/series/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/</loc>
+    <lastmod>2020-03-25T00:07:44+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/series/1-book-reviews/</loc>
+    <lastmod>2020-03-25T00:07:17+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/book-review-the-inmates-are-running-the-asylum/</loc>
+    <lastmod>2020-03-25T00:07:17+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/books/</loc>
+    <lastmod>2020-03-25T00:07:17+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/usability/</loc>
+    <lastmod>2020-03-25T00:07:17+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/user-experience/</loc>
+    <lastmod>2020-03-25T00:07:17+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/book-review-the-tipping-point/</loc>
+    <lastmod>2020-03-25T00:06:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/epidemics/</loc>
+    <lastmod>2020-03-25T00:06:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/sociology/</loc>
+    <lastmod>2020-03-25T00:06:58+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/introduction/</loc>
+    <lastmod>2020-03-25T00:06:41+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/introduction-to-deep-learning/</loc>
+    <lastmod>2020-03-25T00:06:41+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/series/1-data-exploration-and-cleaning/</loc>
+    <lastmod>2020-03-25T00:06:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/data-cleaning/</loc>
+    <lastmod>2020-03-25T00:06:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/data-exploration/</loc>
+    <lastmod>2020-03-25T00:06:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/data-exploration/</loc>
+    <lastmod>2020-03-25T00:06:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/machine-learning/</loc>
+    <lastmod>2020-03-25T00:06:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/pandas/</loc>
+    <lastmod>2020-03-25T00:06:19+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/data-cleaning/</loc>
+    <lastmod>2020-03-25T00:06:13+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/series/3-machine-learning-for-beginners/</loc>
+    <lastmod>2020-03-25T00:06:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/linear-model/</loc>
+    <lastmod>2020-03-25T00:06:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/linear-regression/</loc>
+    <lastmod>2020-03-25T00:06:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/linear-regression/</loc>
+    <lastmod>2020-03-25T00:06:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/regression/</loc>
+    <lastmod>2020-03-25T00:06:05+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/classification/</loc>
+    <lastmod>2020-03-25T00:05:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/linear-models/</loc>
+    <lastmod>2020-03-25T00:05:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/support-vector-machine/</loc>
+    <lastmod>2020-03-25T00:05:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/support-vector-machines/</loc>
+    <lastmod>2020-03-25T00:05:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/svm/</loc>
+    <lastmod>2020-03-25T00:05:56+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/introduction-to-machine-learning/</loc>
+    <lastmod>2020-03-25T00:05:29+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/categories/general/</loc>
+    <lastmod>2020-03-25T00:05:14+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/tags/welcome/</loc>
+    <lastmod>2020-03-25T00:05:14+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/articles/2020/welcome-to-my-website/</loc>
+    <lastmod>2020-03-25T00:05:14+01:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://example.org/about/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/contact/</loc>
+  </url>
+  
+  <url>
+    <loc>http://example.org/resources/</loc>
+  </url>
+  
+</urlset>

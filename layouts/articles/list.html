@@ -2,7 +2,7 @@
 
 <h1>{{ .Title }}</h1>
 
-{{ range .Pages.ByPublishDate.Reverse }}
+{{ range .Pages.ByLastmod.Reverse }}
 <p>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     <br>
@@ -10,6 +10,8 @@
 </p>
 {{ end }}
 
-<aside>{{ partial "taxonomies-cloud.html" . }}</aside>
+<aside>{{ partial "categories-list.html" . }}
+    {{ partial "tags-list.html" . }}
+</aside>
 
 {{ end }}
