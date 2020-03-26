@@ -48,11 +48,11 @@ title = "RogerGallart Personal Website"
       url = "/series/"
       weight = 5  
 
-  [[menu.main]]
-    name = "Projects"
-    pre = "mdi mdi-lightbulb-on-outline"
-    url = "/projects/"
-    weight = 6
+  #[[menu.main]]
+  #  name = "Projects"
+  #  pre = "mdi mdi-lightbulb-on-outline"
+  #  url = "/projects/"
+  #  weight = 6
 
   [[menu.main]]
     name = "Resources"
