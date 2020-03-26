@@ -3,6 +3,8 @@
 <h1>{{ .Title }}</h1>
 {{ partial "date-and-tags.html" .}}
 <br><br>
+{{ partial "toc.html" . }}
 {{ .Content }} 
+
 
 {{ end }}

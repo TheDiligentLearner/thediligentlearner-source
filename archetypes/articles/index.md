@@ -5,6 +5,8 @@ lastmod: {{ .Date }}
 categories: []
 tags: []
 series: []
+tocrender: true
+tocminwords: 400
 draft: false
 ---
 
