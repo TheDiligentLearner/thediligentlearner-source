@@ -1,5 +1,5 @@
 ---
-title: About
+title: "About title" 
 type: "static-pages"
 layout: "about"
 ---
