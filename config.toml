@@ -2,7 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "RogerGallart Personal Website"
 #enableGitInfo = true
-disableKinds = ["taxonomyTerm"]
+#disableKinds = ["taxonomyTerm"]
 [permalinks]
   articles = "/:section/:year/:filename/"
 

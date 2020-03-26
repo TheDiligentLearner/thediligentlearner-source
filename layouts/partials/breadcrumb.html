@@ -10,12 +10,13 @@
   {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
 {{ end }}
 
-{{ if eq .p1.Kind "taxonomyTerm" }}
+
+{{ if and (eq .p1.Kind "taxonomyTerm") (ne .p1.Title "Series") }}
   <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
   <a href="{{ `articles/` | absURL }}">Articles</a></li>     
 {{ else if eq .p1.Kind "taxonomy" }}
   <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
-  <a href="{{ .p1.Permalink }}">Tag: {{ .p1.Title }}</a></li> 
+  <a href="{{ .p1.Permalink }}">Search: {{ .p1.Title }}</a></li>
   {{ else }}
     <li{{ if eq .p1 .p2 }} class="active"{{ end }}>
   <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a>

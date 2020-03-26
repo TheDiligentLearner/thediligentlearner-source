@@ -5,6 +5,7 @@ lastmod: 2020-03-25T00:05:14+01:00
 categories: ["general"]
 tags: ["welcome"]
 series: []
+series_weight:
 tocrender: true
 tocminwords: 0
 draft: false
