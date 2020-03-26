@@ -6,7 +6,7 @@ categories: ["general"]
 tags: ["welcome"]
 series: []
 tocrender: true
-tocminwords: 400
+tocminwords: 0
 draft: false
 ---
 
