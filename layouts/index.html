@@ -5,4 +5,33 @@
 
 <p>{{ .Site.Params.homeText | markdownify }}</p>
 
+{{/*  <h2>Browse by category</h2>
+<div >
+    {{ $categories := $.Site.Taxonomies.categories.ByCount }}
+    {{ $v1 := where $categories "Count" ">=" 1 }}
+    {{ $v2 := where $v1 "Term" "not in" (slice "hugo" "tags" "rss") }}
+    {{ range $v2 }}
+    {{ if .Term }}
+    {{ $categoryURL := printf "categories/%s" .Term | relURL }}
+    <a href="{{ $categoryURL }}">{{ .Term }} <span class="">({{ .Count }})</span></a>
+    {{ end }}
+    {{ end }}
+</div>
+<br>
+<br>
+<h2>Browse by tag</h2>
+<div >
+    {{ $tags := $.Site.Taxonomies.tags.ByCount }}
+    {{ $v1 := where $tags "Count" ">=" 1 }}
+    {{ $v2 := where $v1 "Term" "not in" (slice "hugo" "tags" "rss") }}
+    {{ range $v2 }}
+    {{ if .Term }}
+    {{ $tagURL := printf "tags/%s" .Term | relURL }}
+    <a href="{{ $tagURL }}" class="btn btn-default" role="button" style="text-transform: uppercase; font-size: 12px; padding-right: 5px; padding-left: 5px;" >{{ .Term }} <span class="badge">({{ .Count }})</span></a>
+    {{ end }}
+    {{ end }}
+</div>
+
+<br>  */}}
+
 {{ end }}

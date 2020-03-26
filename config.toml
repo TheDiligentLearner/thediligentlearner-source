@@ -2,7 +2,7 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "RogerGallart Personal Website"
 #enableGitInfo = true
-
+disableKinds = ["taxonomyTerm"]
 [permalinks]
   articles = "/:section/:year/:filename/"
 
@@ -38,7 +38,7 @@ title = "RogerGallart Personal Website"
       parent = "articles"
       name = "Browse"
       pre = "mdi mdi-file-document-edit-outline"
-      url = "/tags/"
+      url = "/articles/"
       weight = 4  
 
     [[menu.main]]
