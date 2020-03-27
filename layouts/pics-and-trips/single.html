@@ -1,0 +1,63 @@
+{{ define "main" }}
+
+<h1>{{ .Title }}</h1>
+<p>{{ .Summary }}</p>
+
+{{ partial "debugprint.html" .}}
+
+{{ $jsonfile := .Resources.GetMatch "**.json" }}
+{{ $dataJ := $jsonfile.Content | transform.Unmarshal }}
+
+{{ $picmap := $dataJ.pictures }}
+
+<ul>
+  {{ range $picmap }}
+     <li>
+         {{ $picurl :=  printf "%s%s" $.RelPermalink .url}}
+         <a href="{{ $picurl }}">{{ .url }}</a>           
+      </li>
+  {{ end }}
+</ul>
+<p>
+  {{ range $picmap }}
+     {{ $picurl :=  printf "%s%s" $.Permalink .url | absURL}}
+     <img src={{$picurl}} alt="" height="100" width="100">
+  {{ end }}
+</p>
+
+{{/*{{ with .Page.Resources.GetMatch $jsonfile }}
+{{ $cont := .Content | transform.Unmarshal }}
+{{ end }}
+
+{{ $j := .Page.Resources.GetMatch $jsonfile }} 
+{{ $c := $j.Content | transform.Unmarshal }}
+{{ $c }} */}}
+
+{{/*
+{{ $dataJ := getJSON .Permalink "country-pics.json" }}
+{{ $picmap := $dataJ.pictures }}
+
+{{ $data := .Resources.GetMatch "country-pics.json"}}
+{{ $data }}
+<ul>
+    {{ range $picmap }}
+       <li>
+           {{ $picurl :=  printf "%s%s" $.RelPermalink .url}}
+           <a href="{{ $picurl }}">{{ .url }}</a>           
+        </li>
+    {{ end }}
+  </ul>
+<p>
+    {{ range $picmap }}
+       {{ $picurl :=  printf "%s%s" $.Permalink .url | absURL}}
+       <img src={{$picurl}} alt="" height="100" width="100">
+    {{ end }}
+</p>
+*/}}
+{{/*  {{ partial "date-and-tags.html" .}}  */}}
+
+<br><br>
+
+{{ .Content }} 
+
+{{ end }}

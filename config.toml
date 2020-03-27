@@ -4,7 +4,13 @@ title = "RogerGallart Personal Website"
 #enableGitInfo = true
 #disableKinds = ["taxonomyTerm"]
 [permalinks]
-  articles = "/:section/:year/:filename/"
+  articles = "/:section/:year/:month/:filename/"
+  pics-and-trips = "/:section/:filename/"
+
+#[caches]
+#[caches.getjson]
+#dir = ":cacheDir/:project"
+#maxAge = 0
 
 [taxonomies]
   category = "categories"

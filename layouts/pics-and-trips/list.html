@@ -1,0 +1,21 @@
+{{ define "main" }}
+
+This is the pics-and-trips list layout
+
+<h1>{{ .Title }}</h1>
+
+<img src="{{ .Params.mapfilename }}" alt="" width="100%">
+<ul>
+{{ range .Pages.ByTitle }}
+<li>
+    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+</li>
+{{ end }}
+</ul>
+
+
+<!--<aside>{{ partial "categories-list.html" . }}
+    {{ partial "tags-list.html" . }}
+</aside>-->
+
+{{ end }}

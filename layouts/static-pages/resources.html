@@ -1,8 +1,9 @@
 {{ define "main" }}
-<aside>{{ partial "toc.html" . }}</aside>
 <h1>{{ .Title }}</h1>
 <h1>Template static-pages resources</h1>
 
 {{ .Content }} 
+<aside>{{ partial "toc.html" . }}</aside>
+
 {{ end }}
 

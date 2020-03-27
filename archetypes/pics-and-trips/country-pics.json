@@ -1,0 +1,24 @@
+{ "country": "{{.Name}} ",
+    "pictures": [{
+        "url": "",
+        "title": "",
+        "author": "",
+        "year": "",
+        "location": "",
+        "description": ""
+    }, {
+        "url": "",
+        "title": "",
+        "author": "",
+        "year": "",
+        "location": "",
+        "description": ""
+    }, {
+        "url": "",
+        "title": "",
+        "author": "",
+        "year": "",
+        "location": "",
+        "description": ""
+    }]
+}

@@ -8,7 +8,12 @@
     <br>
     {{ partial "date-and-tags.html" . }}
 </p>
+<p>
+    {{ .Summary }}
+</p>
 {{ end }}
+
+
 
 <aside>{{ partial "categories-list.html" . }}
     {{ partial "tags-list.html" . }}

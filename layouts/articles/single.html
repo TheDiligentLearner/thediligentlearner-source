@@ -1,10 +1,13 @@
 {{ define "main" }}
 
 <h1>{{ .Title }}</h1>
+<p>{{ .Summary }}</p>
+
+
 {{ partial "date-and-tags.html" .}}
 <br><br>
-{{ partial "toc.html" . }}
+
 {{ .Content }} 
 
-
+{{ partial "toc.html" . }}
 {{ end }}
