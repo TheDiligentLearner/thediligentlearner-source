@@ -1,16 +1,23 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "RogerGallart Personal Website"
+paginate = 1
+paginatePath = "page"
 #enableGitInfo = true
 #disableKinds = ["taxonomyTerm"]
-[permalinks]
-  articles = "/:section/:year/:month/:filename/"
-  pics-and-trips = "/:section/:filename/"
+
+######################################
+# Groups of configuration parameters #
+######################################
 
 #[caches]
 #[caches.getjson]
 #dir = ":cacheDir/:project"
 #maxAge = 0
+
+[permalinks]
+  articles = "/:section/:year/:month/:filename/"
+  pics-and-trips = "/:section/:filename/"
 
 [taxonomies]
   category = "categories"
@@ -20,6 +27,9 @@ title = "RogerGallart Personal Website"
 [params]
   ddateFormat = "Jan 2, 2006"
   homeText = "You just made a Hugo blog from scratch"
+  description = "Text about my cool site" #Used for metadata if not defined in frontmatter
+  images = ["/images/site-feature-image.jpg"] #Used for metadata if not defined in frontmatter
+  title = "My cool site" #Used for metadata
 
 [menu]
   [[menu.main]]
@@ -77,9 +87,3 @@ title = "RogerGallart Personal Website"
     pre = "mdi mdi-email-outline"
     url = "/contact/"
     weight = 9
-
-#  [[menu.main]]
-#    name = "Tags"
-#    pre = "mdi mdi-tag-outline"
-#    url = "/tags/"
-#    weight = 10

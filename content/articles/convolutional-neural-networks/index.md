@@ -1,7 +1,10 @@
 ---
-title: "Convolutional Neural Networks"
+title: Convolutional Neural Networks
+description: This is the description22
+images:
+    - cnn.png
 date: 2020-03-25T00:07:44+01:00
-lastmod: 2020-03-25T00:07:44+01:00
+lastmod: 2020-03-28T00:07:44+01:00
 categories: ["deep learning"]
 tags: ["cnn", "convolutional neural networks"]
 series: ["2 - Deep Learning for beginners"]
@@ -9,7 +12,7 @@ series_weight: 100
 tocrender: true
 tocminwords: 0
 draft: false
-summary: "This is a summary eu consectetur duis excepteur occaecat duis eu amet sint voluptate elit sunt cupidatat proident sint. Ex irure qui reprehenderit consectetur ad velit id enim reprehenderit dolor mollit. Consequat veniam fugiat excepteur ipsum officia qui aute nisi fugiat reprehenderit et sint labore."
+summary: This is a summary eu consectetur duis excepteur occaecat duis eu amet sint voluptate elit sunt cupidatat proident sint. Ex irure qui reprehenderit consectetur ad velit id enim reprehenderit dolor mollit. Consequat veniam fugiat excepteur ipsum officia qui aute nisi fugiat reprehenderit et sint labore.
 ---
 
 ## Title 1

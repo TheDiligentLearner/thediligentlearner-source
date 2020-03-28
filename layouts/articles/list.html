@@ -2,7 +2,13 @@
 
 <h1>{{ .Title }}</h1>
 
-{{ range .Pages.ByLastmod.Reverse }}
+{{/* {{ range .Pages.ByLastmod.Reverse }} */}}
+{{/* $paginator := .Paginate (where .Data.Pages "Type" "articles") */}}
+{{/* $paginator := .Paginate (where .Data.Pages "Type" "articles") 5 */}}
+
+
+{{ $paginator := .Paginator }}
+{{ range $paginator.Pages.ByLastmod.Reverse }}
 <p>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     <br>
@@ -13,6 +19,10 @@
 </p>
 {{ end }}
 
+Here goes the numbers to change the page
+{{/* template "_internal/pagination.html" . */}}
+
+{{ partial "pagination.html" . }}
 
 
 <aside>{{ partial "categories-list.html" . }}

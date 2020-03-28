@@ -2,7 +2,7 @@
 <h1>{{ .Title }}</h1>
 <h1>Template static-pages resources</h1>
 
-{{ .Content }} 
+{{ partial "headline-hash.html" .Content }}
 <aside>{{ partial "toc.html" . }}</aside>
 
 {{ end }}

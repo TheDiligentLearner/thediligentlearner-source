@@ -1,6 +1,7 @@
 ---
 title: "{{ replace .Name "-" " " | title }}"
-description: ""
+description: 
+images:
 date: {{ .Date }}
 lastmod: {{ .Date }}
 categories: []
@@ -10,5 +11,5 @@ series_weight: 0
 tocrender: true
 tocminwords: 400
 draft: false
-summary: ""
+summary: 
 ---

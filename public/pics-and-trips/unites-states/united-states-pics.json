@@ -1,0 +1,24 @@
+{ "country": "Unites States",
+    "pictures": [{
+        "url": "united-states-buda-1.jpg",
+        "title": "Buda in US",
+        "author": "Roger Gallart",
+        "year": "2015",
+        "location": "Papapmen",
+        "description": "This buda is super big, and fancy!"
+    }, {
+        "url": "united-states-temple-1.jpg",
+        "title": "Temple very beautiful",
+        "author": "Roger Gallart",
+        "year": "2014",
+        "location": "Somewhere",
+        "description": "Esse ut elit ut ad aliqua."
+    }, {
+        "url": "united-states-river-1.jpg",
+        "title": "Mekong river",
+        "author": "Roger Gallart",
+        "year": "2013",
+        "location": "Somewhere else",
+        "description": "Eu nostrud voluptate do irure proident nisi veniam minim ipsum pariatur reprehenderit officia occaecat. Lorem id do qui adipisicing laboris enim. Deserunt ea ullamco exercitation occaecat officia occaecat. Anim eu laboris laborum nulla quis dolore dolor cupidatat do mollit ad minim et incididunt. Aute aliqua labore et esse nisi irure."
+    }]
+}

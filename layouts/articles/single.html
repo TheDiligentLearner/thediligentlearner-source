@@ -7,7 +7,7 @@
 {{ partial "date-and-tags.html" .}}
 <br><br>
 
-{{ .Content }} 
+{{ partial "headline-hash.html" .Content }}
 
 {{ partial "toc.html" . }}
 {{ end }}
