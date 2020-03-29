@@ -5,53 +5,46 @@
 # if no pic is wanted, leave it blank
 
 
-- groupid: macosapps
-  groupname: MacOS-Apps 1.0
+- groupname: MacOS-Apps 1.0
   pos: 10
   resources:
-    - id: tripmode
+    - name: Trip Mode app
       pos: 0
-      name: Trip Mode app
       type: Free app
       description: Allows to control connection to internet
       url: https://www.tripmode.ch/
       img: tripmode.png
       comments: Comments about trip mode app
 
-    - id: tripmode1
+    - name: Trip Mode app1
       pos: 3
-      name: Trip Mode app1
       type: Free app1
       description: Allows to control connection to internet1
       url: https://www.tripmode.ch/
       img: tripmode.png
       comments: Comments about trip mode app1
 
-    - id: tripmode2
+    - name: Trip Mode app2
       pos: 2
-      name: Trip Mode app2
       type: Free app2
       description: Allows to control connection to internet2
       url: https://www.tripmode.ch/
       img: tripmode.png
       comments: Comments about trip mode app2
 
-- groupid: courses
-  groupname: Courses about coding
+- groupname: Courses about coding
   pos: 5
   resources:
-    - id: satai
+    - name: Saturdays.AI
       pos: 3
-      name: Saturdays.AI
       type: Machine Learning
       description: Web to learn coding for AI
       url: http://saturdays.ai
       img: saturdaysai-logo.png
       comments: Comments about saturdays.AI
 
-    - id: satai1
+    - name: Saturdays.AI1
       pos: 1
-      name: Saturdays.AI1
       type: Machine Learning1
       description: Web to learn coding for AI1
       url: http://saturdays.ai
