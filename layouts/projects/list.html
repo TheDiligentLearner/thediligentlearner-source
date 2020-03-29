@@ -2,17 +2,18 @@
 
 <h1>{{ .Title }}</h1>
 
-{{/* {{ range .Pages.ByLastmod.Reverse }} */}}
+
+{{ range sort .Pages ".Params.position" "asc" }}
 {{/* $paginator := .Paginate (where .Data.Pages "Type" "articles") */}}
 {{/* $paginator := .Paginate (where .Data.Pages "Type" "articles") 5 */}}
 
 
-{{ $paginator := .Paginator }}
-{{ range $paginator.Pages.ByLastmod.Reverse }}
+{{/* $paginator := .Paginator */}}
+{{/* range $paginator.Pages.ByLastmod.Reverse */}}
 <p>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     <br>
-    {{ partial "date-and-tags.html" . }}
+    {{/* partial "date-and-tags.html" . */}}
 </p>
 <p>
     {{ .Summary }}
@@ -21,11 +22,8 @@
 
 {{/* template "_internal/pagination.html" . */}}
 
-{{ partial "pagination.html" . }}
+{{/* partial "pagination.html" . */}}
 
 
-<aside>{{ partial "categories-list.html" . }}
-    {{ partial "tags-list.html" . }}
-</aside>
 
 {{ end }}
