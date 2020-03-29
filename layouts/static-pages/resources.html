@@ -11,12 +11,19 @@
     {{ $sorted_items := sort .resources "pos" "asc "}}
     <h2 id="{{ .groupid }}">{{ .groupname }}</h2>
         {{ range $sorted_items }}
+        {{ $imgurl := printf "%simg/%s" $.Permalink .img }}
         <ul>
             <li>Name: {{.name}}</li>
             <li>Type: {{.type}}</li>
             <li>Description: {{.description}}</li>
             <li>Comments: {{.comments}}</li>
             <li>Link: <a href="{{.url}}" target="_blank">Visit web</a></li>
+            <li>Picture: 
+                {{ with .img }}
+                <img src="{{ $imgurl }}" alt="" height="42" width="42">
+                {{ end }}
+            </li>
+            
         </ul>
         {{ end }}
 {{ end }}

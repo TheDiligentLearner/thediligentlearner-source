@@ -1,7 +1,8 @@
 #
 # Resources
 #
-# pic stored in the resources/img/ folder
+# pic stored in the /content/resources/img/ folder
+# if no pic is wanted, leave it blank
 
 
 - groupid: macosapps
