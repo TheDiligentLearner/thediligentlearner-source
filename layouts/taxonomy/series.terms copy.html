@@ -1,0 +1,31 @@
+{{ define "main" }}
+
+
+<section id="">
+    <ul>
+        {{ range $key, $taxonomy := .Site.Taxonomies.series.Alphabetical }}
+        <li id="{{ printf `anchor-%d` $key }}">{{ .Page.Title }}</li>
+        <ul>
+            {{ range $taxonomy.Pages }}
+            <li id=""><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
+            {{ end }}
+        </ul>
+        {{ end }}
+    </ul>
+</section>
+
+<!-- <aside>
+    {{ partial "series-list.html" . }}
+</aside> -->
+
+<aside>
+   Table of contents
+    <ul>
+        {{ range $key, $taxonomy := .Site.Taxonomies.series.Alphabetical }}
+        <li><a href="{{ printf `#anchor-%d` $key }}">{{ .Page.Title }}</li></a>
+        {{ end }}
+    </ul>
+</aside>
+
+
+{{ end }}

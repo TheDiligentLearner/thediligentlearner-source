@@ -4,7 +4,7 @@ date: 2020-03-25T00:06:05+01:00
 lastmod: 2020-03-25T00:06:05+01:00
 categories: ["machine learning"]
 tags: ["linear regression", "regression", "linear model"]
-series: ["3 - Machine learning for beginners"]
+series: ["mlearn"]
 series_weight: 15
 tocrender: true
 tocminwords: 0

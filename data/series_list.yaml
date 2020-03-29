@@ -1,0 +1,26 @@
+#
+# List of series
+# Format:
+# - id: {short_string}  // It is the same (unique) text used on the front matter of the article to indicate the series
+#   position: {number}  // Indicates the position (weight) to render the series list
+#   name: {string}      // Full name of the series that will be rendered
+#
+# IMPORTANT: Don't forget the "-" before the id. The order does not matter, they are sorted by pos.
+
+- id: dlearn
+  pos: 10
+  name: Deep Learning for beginners and advanced users
+
+- id: books
+  pos: 1
+  name: Review of books I've read
+
+- id: dataexp
+  pos: 0
+  name: Data exploration and cleaning
+
+- id: mlearn
+  pos: 2
+  name: Machine Learning for dummies
+
+

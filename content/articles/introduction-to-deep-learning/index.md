@@ -4,7 +4,7 @@ date: 2020-03-25T00:06:41+01:00
 lastmod: 2020-03-25T00:06:41+01:00
 categories: ["deep learning"]
 tags: ["introduction"]
-series: ["2 - Deep Learning for beginners"]
+series: ["dlearn"]
 series_weight: 10
 tocrender: true
 tocminwords: 0

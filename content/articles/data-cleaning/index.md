@@ -4,7 +4,7 @@ date: 2020-03-25T00:06:13+01:00
 lastmod: 2020-03-25T00:06:13+01:00
 categories: ["machine learning"]
 tags: ["data cleaning", "data exploration", "pandas"]
-series: ["1 - Data exploration and cleaning"]
+series: ["dataexp"]
 series_weight: 0
 tocrender: true
 tocminwords: 0

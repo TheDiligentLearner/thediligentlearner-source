@@ -1,15 +1,21 @@
 {{ define "main" }}
 
+{{ $series_list := sort $.Site.Data.series_list "pos" "asc"}}
+
 <section id="">
-    <ul>
-        {{ range $key, $taxonomy := .Site.Taxonomies.series.Alphabetical }}
-        <li id="{{ printf `anchor-%d` $key }}">{{ .Page.Title }}</li>
+    <ul>    
+        {{ range $elem_val := $series_list }}
+        <li id="{{ $elem_val.id }}">{{ $elem_val.name }}</li> 
+
+        {{ $taxonomy := index $.Site.Taxonomies.series $elem_val.id}}   
         <ul>
             {{ range $taxonomy.Pages }}
-            <li id=""><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
+                <li id=""><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
             {{ end }}
-        </ul>
+        </ul>  
+
         {{ end }}
+            
     </ul>
 </section>
 
@@ -19,12 +25,13 @@
 
 <aside>
    Table of contents
-    <ul>
-        {{ range $key, $taxonomy := .Site.Taxonomies.series.Alphabetical }}
-        <li><a href="{{ printf `#anchor-%d` $key }}">{{ .Page.Title }}</li></a>
-        {{ end }}
-    </ul>
+   <ul>
+    {{ range $elem_val := $series_list }}
+        <li><a href="#{{ $elem_val.id }}">{{ $elem_val.name }}</li> 
+    {{ end }}
+    </ul>  
 </aside>
 
 
 {{ end }}
+

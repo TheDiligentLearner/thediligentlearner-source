@@ -7,7 +7,7 @@ date: 2020-03-25T00:07:44+01:00
 lastmod: 2020-03-28T00:07:44+01:00
 categories: ["deep learning"]
 tags: ["cnn", "convolutional neural networks"]
-series: ["2 - Deep Learning for beginners"]
+series: ["dlearn"]
 series_weight: 100
 tocrender: true
 tocminwords: 0

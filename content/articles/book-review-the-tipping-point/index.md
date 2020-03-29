@@ -4,7 +4,7 @@ date: 2020-03-25T00:06:58+01:00
 lastmod: 2020-03-25T00:06:58+01:00
 categories: ["books"]
 tags: ["epidemics", "sociology"]
-series: ["1 - Book reviews"]
+series: ["books"]
 series_weight: 4
 tocrender: true
 tocminwords: 0
