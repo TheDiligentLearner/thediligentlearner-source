@@ -6,7 +6,7 @@
 
 
 - groupid: macosapps
-  groupname: MacOS Apps
+  groupname: MacOS-Apps 1.0
   pos: 10
   resources:
     - id: tripmode

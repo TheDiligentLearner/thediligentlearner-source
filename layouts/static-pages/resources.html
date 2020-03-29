@@ -1,4 +1,5 @@
 {{ define "main" }}
+
 <h1>{{ .Title }}</h1>
 <h1>Template static-pages resources</h1>
 
@@ -9,7 +10,9 @@
 
 {{ range $sorted_groups }}
     {{ $sorted_items := sort .resources "pos" "asc "}}
-    <h2 id="{{ .groupid }}">{{ .groupname }}</h2>
+    <h2 id="{{ anchorize .groupname }}">{{ .groupname }} 
+        <a class="headline-hash" href="#{{ anchorize .groupname }}">#</a>
+    </h2>
         {{ range $sorted_items }}
         {{ $imgurl := printf "%simg/%s" $.Permalink .img }}
         <ul>
@@ -32,9 +35,10 @@
 List of resources:
 {{ range $sorted_groups }}
     <ul>
-        <li><a href="#{{.groupid}}">{{ .groupname }}</a></li>
+        <li><a href="#{{ anchorize .groupname }}">{{ .groupname }}</a></li>
     </ul>
 {{ end }}
 </aside>
+
 
 {{ end }}
