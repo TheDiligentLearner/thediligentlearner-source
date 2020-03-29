@@ -21,11 +21,13 @@
         {{ end }}
 {{ end }}
 
+<aside>
 List of resources:
 {{ range $sorted_groups }}
     <ul>
         <li><a href="#{{.groupid}}">{{ .groupname }}</a></li>
     </ul>
 {{ end }}
+</aside>
 
 {{ end }}
