@@ -3,19 +3,19 @@
 {{ $series_list := sort $.Site.Data.series_list "pos" "asc"}}
 
 <section id="">
-    <ul>    
+    <ul>
         {{ range $elem_val := $series_list }}
-        <li id="{{ $elem_val.id }}">{{ $elem_val.name }}</li> 
+        <li id="{{ $elem_val.id }}">{{ $elem_val.name }}</li>
 
-        {{ $taxonomy := index $.Site.Taxonomies.series $elem_val.id}}   
+        {{ $taxonomy := index $.Site.Taxonomies.series $elem_val.id}}
         <ul>
             {{ range $taxonomy.Pages }}
-                <li id=""><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
+            <li id=""><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
             {{ end }}
-        </ul>  
+        </ul>
 
         {{ end }}
-            
+
     </ul>
 </section>
 
@@ -24,14 +24,14 @@
 </aside> -->
 
 <aside>
-   Table of contents
-   <ul>
-    {{ range $elem_val := $series_list }}
-        <li><a href="#{{ $elem_val.id }}">{{ $elem_val.name }}</li> 
-    {{ end }}
-    </ul>  
+    Table of contents
+    <ul>
+        {{ range $elem_val := $series_list }}
+        <li>
+            <a href="#{{ $elem_val.id }}">{{ $elem_val.name }}</a>
+        </li>
+        {{ end }}
+    </ul>
 </aside>
 
-
 {{ end }}
-
