@@ -5,7 +5,8 @@
 <section id="">
     <ul>
         {{ range $elem_val := $series_list }}
-        <li id="{{ $elem_val.id }}">{{ $elem_val.name }}</li>
+        <h2 id="{{ anchorize $elem_val.name }}">{{ $elem_val.name }}
+        <a class="headline-hash" href="#{{ anchorize $elem_val.name }}">#</a></h2>
 
         {{ $taxonomy := index $.Site.Taxonomies.series $elem_val.id}}
         <ul>
@@ -28,7 +29,7 @@
     <ul>
         {{ range $elem_val := $series_list }}
         <li>
-            <a href="#{{ $elem_val.id }}">{{ $elem_val.name }}</a>
+            <a href="#{{ anchorize $elem_val.name }}">{{ $elem_val.name }}</a>
         </li>
         {{ end }}
     </ul>
