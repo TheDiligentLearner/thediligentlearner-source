@@ -3,8 +3,11 @@
 #
 # pic stored in the resources/img/ folder
 
-- group: MacOs Apps
-  pos: 0
+
+- groupid: macosapps
+  groupname: MacOS Apps
+  pos: 10
+  resources:
     - id: tripmode
       pos: 0
       name: Trip Mode app
@@ -15,7 +18,7 @@
       comments: Comments about trip mode app
 
     - id: tripmode1
-      pos: 1
+      pos: 3
       name: Trip Mode app1
       type: Free app1
       description: Allows to control connection to internet1
@@ -32,9 +35,12 @@
       img: tripmode.png
       comments: Comments about trip mode app2
 
-- group: Webs
+- groupid: courses
+  groupname: Courses about coding
+  pos: 5
+  resources:
     - id: satai
-      pos: 0
+      pos: 3
       name: Saturdays.AI
       type: Machine Learning
       description: Web to learn coding for AI
@@ -49,4 +55,4 @@
       description: Web to learn coding for AI1
       url: http://saturdays.ai
       img: saturdaysai-logo.png
-      comments: Comments about saturdays.AI1
+      comments: Comments about saturdays.AI
