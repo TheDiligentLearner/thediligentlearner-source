@@ -7,6 +7,9 @@
 
 - groupname: MacOS-Apps 1.0
   pos: 10
+  description: 
+    This is an example of description
+    written in two different lines for group macos apps
   resources:
     - name: Trip Mode app
       pos: 0
@@ -32,8 +35,11 @@
       img: tripmode.png
       comments: Comments about trip mode app2
 
-- groupname: Courses about coding
+- groupname: Courses about coding & other stuff
   pos: 5
+  description:
+    This is another example of description
+    written in two different lines for group courses
   resources:
     - name: Saturdays.AI
       pos: 3

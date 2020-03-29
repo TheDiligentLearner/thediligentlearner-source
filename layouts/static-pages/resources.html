@@ -13,6 +13,7 @@
     <h2 id="{{ anchorize .groupname }}">{{ .groupname }} 
         <a class="headline-hash" href="#{{ anchorize .groupname }}">#</a>
     </h2>
+    <p>{{ .description }}</p>
         {{ range $sorted_items }}
         {{ $imgurl := printf "%simg/%s" $.Permalink .img }}
         <ul>
