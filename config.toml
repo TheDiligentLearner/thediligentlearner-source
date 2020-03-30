@@ -15,6 +15,9 @@ paginatePath = "page"
 #dir = ":cacheDir/:project"
 #maxAge = 0
 
+[outputs]
+  section = ["HTML", "JSON", "RSS"]
+
 [permalinks]
   articles = "/:section/:year/:month/:filename/"
   pics-and-trips = "/:section/:filename/"
