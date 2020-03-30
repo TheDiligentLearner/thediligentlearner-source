@@ -6,6 +6,7 @@ paginatePath = "page"
 #enableGitInfo = true
 #disableKinds = ["taxonomyTerm"]
 
+
 ######################################
 # Groups of configuration parameters #
 ######################################
@@ -14,6 +15,19 @@ paginatePath = "page"
 #[caches.getjson]
 #dir = ":cacheDir/:project"
 #maxAge = 0
+
+[related]
+  threshold = 50 
+  includeNewer = true
+  toLower = false
+
+  [[related.indices]]
+    name = "series"
+    weight = 100
+
+  [[related.indices]]
+    name = "date"
+    weight = 10
 
 [outputs]
   section = ["HTML", "JSON", "RSS"]
