@@ -62,6 +62,13 @@ paginatePath = "page"
 
     [[menu.main]]
       parent = "articles"
+      name = "Search"
+      pre = "mdi mdi-magnify"
+      url = "/search/"
+      weight = 4.5  
+
+    [[menu.main]]
+      parent = "articles"
       name = "Series"
       pre = "mdi mdi-file-document-edit-outline"
       url = "/series/"
