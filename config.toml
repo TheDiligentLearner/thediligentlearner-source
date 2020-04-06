@@ -1,7 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "RogerGallart Personal Website"
-paginate = 1
+paginate = 3
 paginatePath = "page"
 googleAnalytics = "UA-123-45" # Put real value
 
