@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-    {{ partial "head.html" . }}    
+
+<head>
+    {{ partial "head/metadata.html" . }}
+    {{ partial "head/custom-opengraph.html" . }}
+    {{ partial "head/custom-twitter-cards.html" . }}
+    {{ partial "head/stylesheets.html" . }}
+
+</head>
 
 <body>
     {{ partial "nav.html" .}}
-   
+
     {{/* Do not show breadcrumb in Homepage */}}
-    {{if not .IsHome}}  
-        {{ partial "breadcrumb.html" . }}
+    {{if not .IsHome}}
+    {{ partial "breadcrumb.html" . }}
     {{ end }}
-   
+
     {{ block "main" . }}{{ end }}
 
+    <footer>
+        {{ partial "footer.html" . }}
+    </footer>
+
+    {{ partial "javascript.html" . }}
 </body>
 
-<footer>
-    {{ partial "footer.html" . }} 
-</footer>
+
 </html>

@@ -1,0 +1,16 @@
+{
+    "version": 3,
+    "mappings": "AICA,AAAA,IAAI,CAAA;EAEJ,SAAS,CAAA,QAAC;EACV,SAAS,CAAA,KAAC;CACT",
+    "sources": [
+        "../../../scss/main.scss",
+        "../../../scss/1-tools/_-tools-index.scss",
+        "../../../scss/1-tools/_fonts.scss",
+        "../../../scss/2-base/_-base-index.scss",
+        "../../../scss/2-base/_vars.scss",
+        "../../../scss/2-base/_base.scss",
+        "../../../scss/3-modules/_-modules-index.scss",
+        "../../../scss/4-pages/_-pages-index.scss"
+    ],
+    "names": [],
+    "file": "main.css"
+}

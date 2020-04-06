@@ -1,0 +1,13 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{{ hugo.Generator }}
+
+{{/* Changes address bar color in some browsers */}}
+<meta name="theme-color" content="#121212">
+
+{{/* Title */}}
+{{ $html_title := print .Title " | " .Site.Title}}
+{{ if .IsHome }}
+    {{ $html_title := .Site.Title }}
+{{ end }}
+<title>{{ $html_title }}</title>
