@@ -1,0 +1,43 @@
+.header {
+    /* position: absolute;
+    top: 0; */
+    width: 100%; /* Replaced vw by % to avoid x-scroll bar*/
+    height: var(--mobile-header-height);
+    background-color: var(--neutral-clr-dark);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 0 20px;
+}
+
+.web-logo {
+    height: 55px;
+
+    &__brain {
+        stroke: var(--secondary-clr-light);
+    }
+
+    &__silhouette {
+        stroke: var(--primary-clr-light);
+    }
+}
+
+.web-name {
+    height: 45px;
+
+    &__rg {
+        fill: var(--primary-clr);
+    }
+
+    &__ogerallart {
+        fill: var(--neutral-clr-lighter);
+    }
+
+    &__dot {
+        fill: var(--neutral-clr-lighter);
+    }
+
+    &__net {
+        fill: var(--secondary-clr-light);
+    }
+}

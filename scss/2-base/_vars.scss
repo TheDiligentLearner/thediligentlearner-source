@@ -1,6 +1,19 @@
+:root {
+    --primary-clr-lighter: hsl(22, 100%, 90%); // Background
+    --primary-clr-light: hsl(22, 100%, 65%); // Decoration
+    --primary-clr: hsl(22, 100%, 50%); // Decoration (main)
+    --primary-clr-dark: hsl(22, 100%, 45%); // Text
 
-root{
+    --secondary-clr-lighter: hsl(209, 100%, 90%); // Background
+    --secondary-clr-light: hsl(209, 100%, 65%); // Decoration
+    --secondary-clr: #0084ff; // Decoration (main)
+    --secondary-clr-dark: hsl(209, 100%, 35%); // Text
 
---colorss: #000000;
---dasdasd: 23px;
+    --neutral-clr-lighter: hsl(0, 0%, 97%); // Non-pure white background
+    --neutral-clr-light: hsl(0, 0%, 90%); // Background
+    --neutral-clr: hsl(0, 0%, 40%); // Text
+    --neutral-clr-dark: hsl(0, 0%, 7%); // Text and non-pure black background
+
+    --mobile-header-height: 75px;
+    --mobile-navbar-height: 55px;
 }

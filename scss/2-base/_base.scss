@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /*  margin: var(--mobile-header-height) 0 var(--mobile-navbar-height) 0;*/
+    margin: 0 0 var(--mobile-navbar-height) 0;
+    border: 0;
+    font-family: "Montserrat", sans-serif;
+    background-color: var(--neutral-clr-lighter);
+}
+
+.content {
+    padding: 15px;
+    color: var(--neutral-clr-dark);
+}
