@@ -10,20 +10,20 @@
 
 <body>
     
-    {{ partial "nav.html" .}}
+    {{ partial "navigation/nav.html" .}}
 
     {{/* Do not show breadcrumb in Homepage */}}
     {{if not .IsHome}}
-    {{ partial "breadcrumb.html" . }}
+    {{ partial "navigation/breadcrumb.html" . }}
     {{ end }}
 
     {{ block "main" . }}{{ end }}
 
 
     <footer>
-        {{ partial "/footer/footer.html" . }}
-        {{ partial "/footer/main-script.html" . }}
-        {{ partial "/footer/search-script.html" . }}
+        {{ partial "footer/footer.html" . }}
+        {{ partial "footer/main-script.html" . }}
+        {{ partial "footer/search-script.html" . }}
     </footer>
 
 </body>

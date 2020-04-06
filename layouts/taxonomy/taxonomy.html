@@ -6,15 +6,15 @@
 <p>
     <a href="{{ .RelPermalink }}">{{ .Title }}</a>
     <br>
-    {{ partial "date-and-tags.html" . }}
+    {{ partial "document/date-and-tags.html" . }}
 </p>
 <p>
     {{ .Summary }}
 </p>
 {{ end }}
 
-<aside>{{ partial "categories-list.html" . }}
-    {{ partial "tags-list.html" . }}
+<aside>{{ partial "taxonomies/categories-list.html" . }}
+    {{ partial "taxonomies/tags-list.html" . }}
 </aside>
 
 {{ end }}

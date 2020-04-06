@@ -3,8 +3,7 @@
 <h1>{{ .Title }}</h1>
 <h1>Template static-pages resources</h1>
 
-<!-- {{ partial "headline-hash.html" .Content }}
-<aside>{{ partial "toc.html" . }}</aside> -->
+
 
 {{ $sorted_groups := sort $.Site.Data.resources_data "pos" "asc"}}
 
