@@ -1,7 +1,11 @@
 .breadcrumbs {
     color: var(--neutral-clr);
 
-    strong {
+    &__home-icon{
+        font-size: 20px;
+        vertical-align: -3px;
+    }
+    &__separator {
         color: var(--primary-clr-dark);
     }
 }

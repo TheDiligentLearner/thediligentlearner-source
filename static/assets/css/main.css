@@ -35,6 +35,10 @@ body {
   background-color: var(--neutral-clr-lighter);
 }
 
+a {
+  text-decoration: none;
+}
+
 .content {
   padding: 15px;
   color: var(--neutral-clr-dark);
@@ -44,7 +48,12 @@ body {
   color: var(--neutral-clr);
 }
 
-.breadcrumbs strong {
+.breadcrumbs__home-icon {
+  font-size: 20px;
+  vertical-align: -3px;
+}
+
+.breadcrumbs__separator {
   color: var(--primary-clr-dark);
 }
 

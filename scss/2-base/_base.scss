@@ -17,6 +17,12 @@ body {
     background-color: var(--neutral-clr-lighter);
 }
 
+a {
+    text-decoration: none;
+   // color: inherit;
+}
+
+
 .content {
     padding: 15px;
     color: var(--neutral-clr-dark);

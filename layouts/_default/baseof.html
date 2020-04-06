@@ -15,7 +15,7 @@
 
     {{/* Do not show breadcrumb in Homepage */}}
     {{if not .IsHome}}
-    {{ partial "navigation/breadcrumb.html" . }}
+    {{ partial "navigation/breadcrumbs.html" . }}
     {{ end }}
 
     {{ block "main" . }}{{ end }}

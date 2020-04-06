@@ -1,0 +1,47 @@
+{{/*  <ol class="">
+  {{ template "breadcrumbnav" (dict "p1" . "p2" .) }}
+</ol>
+
+{{ define "breadcrumbnav" }}
+
+  {{ if .p1.Parent }}
+  {{ template "breadcrumbnav" (dict "p1" .p1.Parent "p2" .p2 )  }}
+  {{ else if not .p1.IsHome }}
+  {{ template "breadcrumbnav" (dict "p1" .p1.Site.Home "p2" .p2 )  }}
+  {{ end }}
+
+
+  {{ if and (eq .p1.Kind "taxonomyTerm") (ne .p1.Title "Series") }}
+  <li>/</li>
+  <li{{ if eq .p1 .p2 }} class="active" {{ end }}>
+    <a href="{{ `articles/` | absURL }}">Articles</a></li>
+  {{ else if eq .p1.Kind "taxonomy" }}
+  <li>/</li>
+    <li{{ if eq .p1 .p2 }} class="active" {{ end }}>
+    <a href="{{ .p1.Permalink }}">Search: {{ .p1.Title }}</a></li>
+  {{ else }}
+  <li>/</li>
+    <li{{ if eq .p1 .p2 }} class="active" {{ end }}>
+  <a href="{{ .p1.Permalink }}">{{ .p1.Title }}</a></li>
+  {{ end }}
+
+
+{{ end }}  */}}
+
+
+<nav class="breadcrumbs">
+  <a href="/"><span class="material-icons breadcrumbs__home-icon">home</span></a>
+    {{ template "breadcrumb" dict "currentPage" .Page}}
+</nav>
+  
+<!-- templates -->
+  {{ define "breadcrumb" }}
+
+   {{ if .currentPage.Parent }}
+   {{ if ne .currentPage.Parent .IsHome }}
+      {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+    {{ end }}
+    <span class="breadcrumbs__separator"> / </span><a href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a> 
+
+  {{ end }}
+  {{ end }}
