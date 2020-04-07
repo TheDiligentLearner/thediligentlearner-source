@@ -1,0 +1,45 @@
+{{ if and (gt .WordCount .Params.tocminwords ) (.Params.tocrender) }}
+
+{{ $new_toc := replace .TableOfContents  "<nav id=\"TableOfContents\">" ""}}
+{{ $new_toc := replace $new_toc "</nav>" "" }}
+{{ $new_toc := replace $new_toc "<ul>" "<ul id=\"toc-menu-content\" class=\"menu__list -js-menu__list\">" }}
+{{ $new_toc := replace $new_toc "<li>" "<li class=\"menu__item\">" }}
+{{ $new_toc := replaceRE `<a (.*)>(.*)</a>` `<a ${1} class="menu__link">${2}</a>` $new_toc  }}
+
+    {{  $new_toc | safeHTML }}
+
+{{ end }}
+
+{{/*   /a>[\w\n\r\s]*(<ul>)   */}}
+{{/* <ul id="toc-menu-content" class="menu__list js-menu__list">
+    <li class="menu__item"><a href="#" class="menu__link">Title 1</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 2</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 3</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 4</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 5</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 6</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 7</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 8</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 9</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 10</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 11</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 12</a></li>
+    <li class="menu__item"><a href="#" class="menu__link">Title 13</a></li>
+</ul>
+*/}}
+
+{{/* Standard output of .TableOfContents used by Hugo
+
+    <nav id="TableOfContents">
+        <ul>
+            <li><a href="#title-1">Title 1</a>
+                <ul>
+                    <li><a href="#title-11">Title 1.1</a></li>
+                    <li><a href="#title-12">Title 1.2</a></li>
+                </ul>
+            </li>
+            <li><a href="#title2">Title2</a></li>
+            <li><a href="#title-3">Title 3</a></li>
+        </ul>
+    </nav> 
+*/}}

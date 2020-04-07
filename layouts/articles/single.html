@@ -9,7 +9,8 @@
 
 {{ partial "document/headline-hash.html" .Content }}
 
-{{ partial "document/toc.html" . }}
+{{/* partial "document/toc.html" . */}}
+{{ partial "document/custom-toc.html" . }}
 
 {{ partial "taxonomies/related.html" . }}
 

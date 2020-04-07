@@ -182,6 +182,11 @@ a {
   transition: transform 0.7s ease-in-out, -webkit-transform 0.7s ease-in-out;
 }
 
+.menu__list.-sublist {
+  visibility: inherit;
+  position: relative;
+}
+
 .menu__item {
   list-style-type: inside;
   border-width: 1px 0px;

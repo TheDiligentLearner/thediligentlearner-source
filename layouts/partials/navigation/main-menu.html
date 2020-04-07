@@ -1,0 +1,26 @@
+<!--<div>
+    <nav>
+        {{ range .Site.Menus.main }}
+            {{ $icon := printf "<span class=\"%s\"></span>" .Pre }}
+            {{ $text := print $icon " " .Name | safeHTML }}
+            <a href="{{ .URL }}">{{ $text }}</a>
+        {{ end }}
+    </nav>
+</div>-->
+
+
+
+<!-- topbar start -->
+
+    <ul id="main-menu-content" class="menu__list js-menu__list">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+                <li class="menu__item">
+                    <a href="{{ .URL }}" class="menu__link">
+                        <span class="{{ .Pre }}">{{ .Name }}</span>
+                    </a>
+                </li>
+        {{ end }}
+    </ul>
+
+

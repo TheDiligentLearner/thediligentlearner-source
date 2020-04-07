@@ -9,17 +9,20 @@
 </head>
 
 <body>
-    
-    {{ partial "header/header.html" . }}
-    {{ partial "navigation/nav.html" .}}
 
-    {{/* Do not show breadcrumb in Homepage */}}
-    {{if not .IsHome}}
-    {{ partial "navigation/breadcrumbs.html" . }}
-    {{ end }}
+        {{ partial "header/header.html" . }}
+        {{ partial "navigation/navbar.html" .}}
 
-    {{ block "main" . }}{{ end }}
+        <main class="content">
 
+        {{/* Do not show breadcrumb in Homepage */}}
+        {{if not .IsHome}}
+        {{ partial "navigation/breadcrumbs.html" . }}
+        {{ end }}
+
+        {{ block "main" . }}{{ end }}
+ 
+    </main>
 
     <footer>
         {{ partial "footer/footer.html" . }}

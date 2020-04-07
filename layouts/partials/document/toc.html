@@ -1,8 +1,0 @@
-{{ if and (gt .WordCount .Params.tocminwords ) (.Params.tocrender) }}
-<aside>
-    <header>
-    <h2>Table of content</h2>
-    </header>
-    {{.TableOfContents}}
-</aside>
-{{ end }}
