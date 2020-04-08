@@ -1,14 +1,39 @@
-<nav class="navbar">
+<nav class="navbar"> 
 
-    <span id="back-navbar-bttn" class="navbar__bttn js-navbar__bttn">
+    <button id="back-navbar-bttn" class="navbar__bttn js-navbar__bttn">
         <span class="material-icons navbar__icon">arrow_back</span>
-    </span>
+    </button>
 
-    <span id="main-navbar-bttn" class="navbar__bttn js-navbar__bttn">MENU</span>
-    {{ partial "navigation/main-menu.html" . }}
+    <button id="main-navbar-bttn" class="navbar__bttn js-navbar__bttn">
+        <span class="js-navbar__icon">MENU</span>
+    </button>
 
-    <span id="toc-navbar-bttn" class="navbar__bttn js-navbar__bttn">
+    <button id="toc-navbar-bttn" class="navbar__bttn js-navbar__bttn">
         <span class="material-icons navbar__icon js-navbar__icon">list</span>
-    </span>
-    {{ partial "document/custom-toc.html" . }}
+    </button>
+
 </nav>
+
+{{ partial "navigation/main-menu.html" . }}
+{{ partial "document/custom-toc.html" . }}
+
+ {{/*   <nav class="navbar">
+
+        <menu id="back-navbar-bttn" class="navbar__bttn js-navbar__bttn">
+            <span class="material-icons navbar__icon">arrow_back</span>
+        </menu>
+    
+        <button class="menu">
+            <span id="main-navbar-bttn" class="navbar__bttn js-navbar__bttn">MENU</span>
+             {{ partial "navigation/main-menu.html" . }}
+        </button>
+    
+        <button class="menu">
+        <span id="toc-navbar-bttn" class="navbar__bttn js-navbar__bttn">
+            <span class="material-icons navbar__icon js-navbar__icon">list</span>
+        </span>
+        {{ partial "document/custom-toc.html" . }}
+        <div class="menu"></div>
+    </nav>
+
+    */}}

@@ -10,11 +10,12 @@ html {
 }
 
 body {
-    /*  margin: var(--mobile-header-height) 0 var(--mobile-navbar-height) 0;*/
+    // margin: var(--mobile-header-height) 0 var(--mobile-navbar-height) 0;
     margin: 0 0 var(--mobile-navbar-height) 0;
     border: 0;
     font-family: "Montserrat", sans-serif;
     background-color: var(--neutral-clr-lighter);
+    position: relative;
 }
 
 a {

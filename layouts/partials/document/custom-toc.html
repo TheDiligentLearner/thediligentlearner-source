@@ -1,6 +1,7 @@
-
 {{/* This is a custom toc created to have access to the html tags, which is not
-possible with the defautl .TableOfContents variable provided by Hugo */}}
+possible with the defautl .TableOfContents variable provided by Hugo 
+Only allows for h2 and h3 headers
+*/}}
 
 <!-- ignore empty links with + -->
 {{ $headers := findRE "<h[2-3].*?>(.|\n])+?</h[2-3]>" .Content }}
@@ -10,29 +11,32 @@ possible with the defautl .TableOfContents variable provided by Hugo */}}
 {{ $show_toc := (eq $.Params.tocrender true) }}
 <!-- the number of words has to be greater than a value -->
 {{ $has_enough_words := gt .WordCount .Params.tocminwords }}
+
 {{ if and $has_headers (and $show_toc $has_enough_words) }}
-
   <!-- TOC header -->
-  <ul id="toc-menu-content" class="menu__list js-menu__list">
-    {{ range $i, $header := $headers }}
-      {{ $headerLevel := index (findRE "[2-3]" . 1) 0 }}
-      {{ $headerLevel := len (seq $headerLevel) }}
+  <nav>
+  <ul id="toc-content" class="toc__list js-menu__list"> {{/* 1st level container */}}
 
-      {{ $anchorID := ($header | plainify | htmlEscape | anchorize) }}
+      {{ range $i, $header := $headers }}
+        {{ $headerLevel := index (findRE "[2-3]" . 1) 0 }}
+        {{ $headerLevel := len (seq $headerLevel) }}
+        {{ $anchorID := ($header | plainify | htmlEscape | anchorize) }}
 
-      {{ if ne $i 0 }}
-        {{ $prevHeaderLevel := index (findRE "[2-3]" (index $headers (sub $i 1)) 1) 0 }}
-        {{ $prevHeaderLevel := len (seq $prevHeaderLevel) }}
+        {{ if ne $i 0 }}
+          {{ $prevHeaderLevel := index (findRE "[2-3]" (index $headers (sub $i 1)) 1) 0 }}
+          {{ $prevHeaderLevel := len (seq $prevHeaderLevel) }}
 
           {{ if gt $headerLevel $prevHeaderLevel }}
             {{ range seq (sub $headerLevel $prevHeaderLevel) }}
-              <ul class="menu__list js-menu__list -sublist">
+              <ul class=> {{/* 2nd level container */}}
             {{end}}
           {{end}}
 
           {{ if lt $headerLevel $prevHeaderLevel }}
             {{ range seq (sub $prevHeaderLevel $headerLevel) }}
-              </li></ul></li>
+              </li>
+              </ul>
+              </li>
             {{end}}
           {{end}}
 
@@ -40,26 +44,34 @@ possible with the defautl .TableOfContents variable provided by Hugo */}}
             </li>
           {{end}}
 
-          <li class="menu__item">
-            <a href="#{{ $anchorID }}" class="menu__link">{{ $header | plainify | htmlEscape }}</a>
+          {{ $class := cond (eq $headerLevel 2) "-header" "-subheader"}}
+          <li class="toc__item "> {{/* 1st or 2nd level item */}}
+          <a href="#{{ $anchorID }}" class="toc__link {{$class}}">{{ $header | plainify | htmlEscape }}</a>
 
           {{ if eq $i (sub (len $headers) 1) }}
             {{ range seq (sub $prevHeaderLevel $headerLevel) }}
-              </li></ul></li>
+              </li>
+              </ul>
+              </li>
             {{end}}
           {{end}}
-      {{else}}
-      <li class="menu__item">
-        <a href="#{{ $anchorID }}" class="menu__link">{{ $header | plainify | htmlEscape }}</a>
-      {{end}}
-    {{end}}
+    
+        {{else}} {{/* if $i == 0 */}}
+          <li class="toc__item "> {{/* 1st level item */}}
+          <a href="#{{ $anchorID }}" class="toc__link -header">{{ $header | plainify | htmlEscape }}</a>
+        {{end}}
 
-    {{ $firstHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers 0) 1) 0)) }}
-    {{ $lastHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
-    {{ range seq (sub $lastHeaderLevel $firstHeaderLevel) }}
-      </li></ul></li>
-    {{end}}
+      {{end}}
+
+      {{ $firstHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers 0) 1) 0)) }}
+      {{ $lastHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
+      {{ range seq (sub $lastHeaderLevel $firstHeaderLevel) }}
+        </li>
+        </ul>
+        </li>
+      {{end}}
 
   </ul>
+  </nav>
 
 {{end}}

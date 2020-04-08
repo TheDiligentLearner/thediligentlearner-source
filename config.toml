@@ -103,7 +103,7 @@ googleAnalytics = "UA-123-45" # Put real value
     weight = 7
 
   [[menu.main]]
-    name = "Pics and Trips"
+    name = "Pics & Trips"
     pre = "mdi mdi-airplane"
     url = "/pics-and-trips/"
     weight = 8

@@ -1,15 +1,9 @@
 
-/* function myFunction() {
-    var element = document.getElementById("Demo");
-    element.classList.toggle("w3-show");
-    } */
 
 (function () {
-    // code
 
     // TEST OVERFLOW
-    var docWidth = document.documentElement.offsetWidth;
-
+    /*     var docWidth = document.documentElement.offsetWidth;
     [].forEach.call(
       document.querySelectorAll('*'),
       function(el) {
@@ -17,30 +11,29 @@
           console.log(el);
           console.log("Size: "+ el.offsetWidth + " / " + docWidth);
         }
-
       }
-    );
+    ); */
 
-    //
 
     var toggle_bttns = document.querySelectorAll(".js-navbar__bttn");
 
     toggleMenu = function (e) {
         let bttn = e.target;
         const keyName = event.key;
+        console.log(e);
         //if ( e.type=="click" || keyName == " ") { 
 
-            if (bttn.id == "main-navbar-bttn") {
-                document.getElementById("main-menu-content").classList.toggle("-js-active-list");
-                document.getElementById("main-navbar-bttn").classList.toggle("-js-active-bttn");
-                document.getElementById("toc-menu-content").classList.remove("-js-active-list");
-                document.getElementById("toc-navbar-bttn").classList.remove("-js-active-bttn");
+            if (bttn.id == "main-navbar-bttn" || bttn.parentElement.id == "main-navbar-bttn") {
+                document.getElementById("main-menu-content").classList.toggle("-js-is-expanded");
+                document.getElementById("main-navbar-bttn").classList.toggle("-js-is-active");
+                document.getElementById("toc-content").classList.remove("-js-is-expanded");
+                document.getElementById("toc-navbar-bttn").classList.remove("-js-is-active");
 
             } else if (bttn.id == "toc-navbar-bttn" || bttn.parentElement.id == "toc-navbar-bttn") {
-                document.getElementById("toc-menu-content").classList.toggle("-js-active-list");
-                document.getElementById("toc-navbar-bttn").classList.toggle("-js-active-bttn");
-                document.getElementById("main-menu-content").classList.remove("-js-active-list");
-                document.getElementById("main-navbar-bttn").classList.remove("-js-active-bttn");
+                document.getElementById("toc-content").classList.toggle("-js-is-expanded");
+                document.getElementById("toc-navbar-bttn").classList.toggle("-js-is-active");
+                document.getElementById("main-menu-content").classList.remove("-js-is-expanded");
+                document.getElementById("main-navbar-bttn").classList.remove("-js-is-active");
             }
         //}
     }
@@ -60,10 +53,10 @@
         if (!event.target.matches('.js-navbar__bttn') && !event.target.matches('.js-navbar__icon')) {
 
             document.querySelectorAll('.js-menu__list').forEach(item => {
-                item.classList.remove("-js-active-list");
+                item.classList.remove("-js-is-expanded");
             })
             document.querySelectorAll('.js-navbar__bttn').forEach(item => {
-                item.classList.remove("-js-active-bttn");
+                item.classList.remove("-js-is-active");
             })
         }
     }
