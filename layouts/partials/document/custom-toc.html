@@ -1,9 +1,11 @@
 {{/* This is a custom toc created to have access to the html tags, which is not
 possible with the defautl .TableOfContents variable provided by Hugo 
-Only allows for h2 and h3 headers
+Only allows for h2 and h3 and h4 headers
 */}}
 
-{{/* Assumptions: a header of level 3 must go after a header of level 2 or 3 */}}
+{{/* Assumptions: 
+  First header is always h2. 
+  There can not be nested sublevels with higher gap than 1 e.g. h2 h4 h4 not possible, should be h2 h3 h4 h4  */}}
 
 
 <!-- none: no TOC, normal: depth:2-3, detailed: depth:2-4 -->
