@@ -3,75 +3,142 @@ possible with the defautl .TableOfContents variable provided by Hugo
 Only allows for h2 and h3 headers
 */}}
 
+{{/* Assumptions: a header of level 3 must go after a header of level 2 or 3 */}}
+
 <!-- ignore empty links with + -->
-{{ $headers := findRE "<h[2-3].*?>(.|\n])+?</h[2-3]>" .Content }}
+{{ $headersRaw := findRE "<h[2-4].*?>(.|\n])+?</h[2-4]>" .Content }}
 <!-- at least one header to link to -->
-{{ $has_headers := ge (len $headers) 1 }}
+{{ $has_headers := ge (len $headersRaw) 1 }}
 <!-- a post can explicitly disable Table of Contents with tocrender: false -->
 {{ $show_toc := (eq $.Params.tocrender true) }}
-<!-- the number of words has to be greater than a value -->
+<!-- the number of words has to be greater than a value  -->
 {{ $has_enough_words := gt .WordCount .Params.tocminwords }}
 
+{{ $headerArray := slice}}
+{{ $levelArray := slice }}
+{{ $anchorArray := slice }}
+
 {{ if and $has_headers (and $show_toc $has_enough_words) }}
-  <!-- TOC header -->
+
+  {{ range $i, $header := $headersRaw }}
+    {{ $header := $header | plainify | htmlEscape }}
+    {{ $level := index (findRE "[2-4]" . 1) 0 }}
+    {{ $anchor := ($header | anchorize) }}
+
+    {{ $headerArray = $headerArray | append $header}}
+    {{ $levelArray = $levelArray | append $level }}
+    {{ $anchorArray = $anchorArray | append $anchor }}
+  {{ end }}
+  {{/* We add a virtual top level h2 at the end */}}
+  {{ $levelArray = $levelArray | append 2 }}
+
+  HeaderArray: {{ $headerArray }}<br/>
+  LevelArray: {{ $levelArray }}<br/>
+  AnchorArray: {{ $anchorArray }}<br/>
+  <nav><ul class="mobile-menu__list">
+
+      {{ range $i, $currentLevel := $levelArray }}
+
+        {{/* $totalNumberOfLevels := sub (len $levelArray) 1 | int*/}}
+        {{ $currentLevel := $currentLevel | int }}
+        {{ $nextLevel := 0 | int}}
+        {{ $levelChange := 0 | int}}
+        {{ $isLastIteration := eq $i (sub (len $levelArray) 1)}}
+        {{/* if lt $i (sub $totalNumberOfLevels 1) */}}
+        
+        {{ if not $isLastIteration}}
+          {{ $nextLevel = index $levelArray (add $i 1) | int }}   
+          {{ $levelChange = sub $nextLevel $currentLevel | int }}
+
+          {{ if eq $levelChange 0 }}
+            <li normal> ={{ index $headerArray $i }} </li>
+          {{ else if and (eq $levelChange 1) (eq $currentLevel 2) }}
+            <li collapsible> +{{ index $headerArray $i }}
+            <ul sublist>
+          {{ else if and (eq $levelChange 1) (eq $currentLevel 3)}}
+            <li collapsible> +{{ index $headerArray $i }}
+            <ul subsublist>
+          {{ else if eq $levelChange -1}}
+            <li normal> -{{ index $headerArray $i }}</li></ul>
+          {{ else if eq $levelChange -2}}
+        <li normal> -{{ index $headerArray $i }} </li></ul></li></ul>
+          {{ end}}
+
+        {{/* Closing tags */}}
+        {{ else }} {{/* Last iteration */}}
+          {{ if eq $levelChange -1}}
+              </ul></li>
+          {{ else if eq $levelChange -2}}
+            </ul></li></ul></li>
+          {{ end }}
+        {{ end }}
+
+      {{ end }}
+  
+    </ul></nav>
+
+{{ end }}
+
+
+
+{{/*   <!-- TOC header -->
   <nav>
-  <ul id="toc-content" class="toc__list js-menu__list"> {{/* 1st level container */}}
+  <ul id="toc-content" class="mobile-menu__list js-menu__list"> 
 
       {{ range $i, $header := $headers }}
-        {{ $headerLevel := index (findRE "[2-3]" . 1) 0 }}
-        {{ $headerLevel := len (seq $headerLevel) }}
-        {{ $anchorID := ($header | plainify | htmlEscape | anchorize) }}
+{{ $headerLevel := index (findRE "[2-3]" . 1) 0 }}
+{{ $headerLevel := len (seq $headerLevel) }}
+{{ $anchorID := ($header | plainify | htmlEscape | anchorize) }}
 
-        {{ if ne $i 0 }}
-          {{ $prevHeaderLevel := index (findRE "[2-3]" (index $headers (sub $i 1)) 1) 0 }}
-          {{ $prevHeaderLevel := len (seq $prevHeaderLevel) }}
+{{ if ne $i 0 }}
+{{ $prevHeaderLevel := index (findRE "[2-3]" (index $headers (sub $i 1)) 1) 0 }}
+{{ $prevHeaderLevel := len (seq $prevHeaderLevel) }}
 
-          {{ if gt $headerLevel $prevHeaderLevel }}
-            {{ range seq (sub $headerLevel $prevHeaderLevel) }}
-              <ul class=> {{/* 2nd level container */}}
-            {{end}}
-          {{end}}
+{{ if gt $headerLevel $prevHeaderLevel }}
+{{ range seq (sub $headerLevel $prevHeaderLevel) }}
+<ul class="mobile-menu__sublist">
+  {{end}}
+  {{end}}
 
-          {{ if lt $headerLevel $prevHeaderLevel }}
-            {{ range seq (sub $prevHeaderLevel $headerLevel) }}
-              </li>
-              </ul>
-              </li>
-            {{end}}
-          {{end}}
-
-          {{ if eq $headerLevel $prevHeaderLevel }}
-            </li>
-          {{end}}
-
-          {{ $class := cond (eq $headerLevel 2) "-header" "-subheader"}}
-          <li class="toc__item "> {{/* 1st or 2nd level item */}}
-          <a href="#{{ $anchorID }}" class="toc__link {{$class}}">{{ $header | plainify | htmlEscape }}</a>
-
-          {{ if eq $i (sub (len $headers) 1) }}
-            {{ range seq (sub $prevHeaderLevel $headerLevel) }}
-              </li>
-              </ul>
-              </li>
-            {{end}}
-          {{end}}
-    
-        {{else}} {{/* if $i == 0 */}}
-          <li class="toc__item "> {{/* 1st level item */}}
-          <a href="#{{ $anchorID }}" class="toc__link -header">{{ $header | plainify | htmlEscape }}</a>
-        {{end}}
-
-      {{end}}
-
-      {{ $firstHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers 0) 1) 0)) }}
-      {{ $lastHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
-      {{ range seq (sub $lastHeaderLevel $firstHeaderLevel) }}
-        </li>
-        </ul>
-        </li>
-      {{end}}
-
-  </ul>
-  </nav>
-
+  {{ if lt $headerLevel $prevHeaderLevel }}
+  {{ range seq (sub $prevHeaderLevel $headerLevel) }}
+  </li>
+</ul>
+</li>
 {{end}}
+{{end}}
+
+{{ if eq $headerLevel $prevHeaderLevel }}
+</li>
+{{end}}
+
+{{ $class := cond (eq $headerLevel 2) "" "--is-collapsible"}}
+<li class="mobile-menu__item {{$class}} ">
+  <a href="#{{ $anchorID }}" class="mobile-menu__link">{{ $header | plainify | htmlEscape }}</a>
+
+  {{ if eq $i (sub (len $headers) 1) }}
+  {{ range seq (sub $prevHeaderLevel $headerLevel) }}
+</li>
+</ul>
+</li>
+{{end}}
+{{end}}
+
+{{else}}
+<li class="mobile-menu__item">
+  <a href="#{{ $anchorID }}" class="toc__link -header">{{ $header | plainify | htmlEscape }}</a>
+  {{end}}
+
+  {{end}}
+
+  {{ $firstHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers 0) 1) 0)) }}
+  {{ $lastHeaderLevel := len (seq (index (findRE "[2-3]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
+  {{ range seq (sub $lastHeaderLevel $firstHeaderLevel) }}
+</li>
+</ul>
+</li>
+{{end}}
+
+</ul>
+</nav>
+*/}}
