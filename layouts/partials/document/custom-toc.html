@@ -5,24 +5,38 @@ Only allows for h2 and h3 headers
 
 {{/* Assumptions: a header of level 3 must go after a header of level 2 or 3 */}}
 
-<!-- ignore empty links with + -->
-{{ $headersRaw := findRE "<h[2-4].*?>(.|\n])+?</h[2-4]>" .Content }}
-<!-- at least one header to link to -->
-{{ $has_headers := ge (len $headersRaw) 1 }}
-<!-- a post can explicitly disable Table of Contents with tocrender: false -->
-{{ $show_toc := (eq $.Params.tocrender true) }}
-<!-- the number of words has to be greater than a value  -->
-{{ $has_enough_words := gt .WordCount .Params.tocminwords }}
 
+<!-- none: no TOC, normal: depth:2-3, detailed: depth:2-4 -->
+{{ $toc := $.Params.toc }}
 {{ $headerArray := slice}}
 {{ $levelArray := slice }}
 {{ $anchorArray := slice }}
+{{ $render_toc := true }}
+{{ $depth := "[2-3]" }}
+{{ $toc }}
+{{ if eq $toc "none" }}
+  {{ $render_toc = false }}
+{{ else if eq $toc "normal" }}
+  {{ $render_toc = true }}
+  {{ $depth = "[2-3]" }}
+{{else if eq $toc "detailed" }}
+  {{ $render_toc = true }}
+  {{ $depth = "[2-4]" }}
+{{ else }}
+  {{ $render_toc = false }}
+{{ end}}
 
-{{ if and $has_headers (and $show_toc $has_enough_words) }}
+<!-- ignore empty links with + -->
+{{ $regex := printf "<h%s.*?>(.|\n])+?</h%s>" $depth $depth }}
+{{ $headersRaw := findRE $regex .Content }}
+<!-- at least one header to link to -->
+{{ $has_headers := ge (len $headersRaw) 1 }}
+
+{{ if and $has_headers $render_toc }}
 
   {{ range $i, $header := $headersRaw }}
     {{ $header := $header | plainify | htmlEscape }}
-    {{ $level := index (findRE "[2-4]" . 1) 0 }}
+    {{ $level := index (findRE $depth . 1) 0 }}
     {{ $anchor := ($header | anchorize) }}
 
     {{ $headerArray = $headerArray | append $header}}

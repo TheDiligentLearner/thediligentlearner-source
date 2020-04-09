@@ -8,8 +8,7 @@ categories: []
 tags: []
 series: []
 series_weight: 0
-tocrender: true
-tocminwords: 400
+toc: normal # none / normal / detailed
 draft: false
 summary: 
 ---
