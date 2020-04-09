@@ -1,5 +1,5 @@
 
-.mobile-menu {
+.menu {
 
     &__list {
         display: block;
@@ -85,17 +85,17 @@
 /*
 
 nav
-    ul.mobile-menu__list
-        li.mobile-menu__item
-            a.mobile-menu__link
-        li.mobile-menu__item
-            a.mobile-menu__link
-        li.mobile-menu__item --is-collapsible
-            a.mobile-menu__link 
-            span.mobile-menu__icon
-            ul.mobile-menu__sublist
-                li.mobile-menu_subitem
-                a.mobile-menu__link    
+    ul.menu__list
+        li.menu__item
+            a.menu__link
+        li.menu__item
+            a.menu__link
+        li.menu__item menu__item--is-collapsible
+            a.menu__link 
+            span.menu__icon
+            ul.menu__list --level2
+                li.menu_item menu__item--level2
+                a.menu__link menu__item--level2    
 
 
 */
