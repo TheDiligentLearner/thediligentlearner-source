@@ -11,23 +11,31 @@
     border: 0;
     z-index: 99;
 
-    &__bttn {
+    &__btn {
         margin: 0;
         flex-grow: 1;
         flex-basis: 0;
         height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        //display: flex;
+        //align-items: center;
+        //justify-content: center; //center
         white-space: nowrap;
         cursor: pointer;
         z-index: 10;
         background: var(--neutral-clr-dark);
         color: var(--neutral-clr-lighter);
+        border: 0;
+        border-radius: 0;
 
         &.-js-is-active {
             color: var(--primary-clr);
         }
+    }
+
+    &__icon {       // In some mobile browsers, button can not be flex. So we put a span as flex container inside the button for centering
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 

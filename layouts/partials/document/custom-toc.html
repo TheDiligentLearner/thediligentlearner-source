@@ -46,9 +46,11 @@ Only allows for h2 and h3 and h4 headers
   {{ end }}
 
   {{/* We add a virtual top level h2 at the end */}}
-  {{ $levelArray = $levelArray | append 2 }}
+  {{ $levelArray = $levelArray | append 1 }}
 
-  <nav><ul class="menu__list">
+  <nav id="toc-panel" class="menu">
+    <h1 class="menu__title">Table of Contents</h1>
+    <ul id="toc-content"class="menu__list" >
 
       {{ range $i, $currentLevel := $levelArray }}
 
@@ -72,9 +74,8 @@ Only allows for h2 and h3 and h4 headers
                 <a href="#{{$currentAnchor}}" class="menu__link">{{ $currentHeader }}</a>  
                 </li>
               {{ else if eq $levelChange 1 }}
-                <li class="menu__item menu__item menu__item--collapsible">
-                <a href="#{{$currentAnchor}}" class="menu__link">{{ $currentHeader }}</a> 
-                <span class="menu__icon menu__icon"></span>
+                <li class="menu__item menu__item--head">
+                <a href="#{{$currentAnchor}}" class="menu__link">{{ $currentHeader }}</a><span class="menu__icon js-fold-btn" >&#10095</span>
                 <ul class="menu__list menu__list--level2">
               {{ end }}
           {{ else if eq $currentLevel 2 }}
@@ -84,12 +85,11 @@ Only allows for h2 and h3 and h4 headers
                 </li></ul>
               {{ else if eq $levelChange 0 }}
                 <li class="menu__item menu__item--level2">
-                <a href="#{{$currentAnchor}}" class="menu__link--level2">{{ $currentHeader }}</a>
+                <a href="#{{$currentAnchor}}" class="menu__link menu__link--level2">{{ $currentHeader }}</a>
                 </li>
               {{ else if eq $levelChange 1}}
-                <li class="menu__item menu__item menu__item--level2 menu__item--collapsible">
-                <a href="#{{$currentAnchor}}" class="menu__link menu_link--level2">{{ $currentHeader }}</a>
-                <span class="menu__icon menu__icon--level2"></span>
+                <li class="menu__item menu__item--level2 menu__item--head">
+                <a href="#{{$currentAnchor}}" class="menu__link menu__link--level2">{{ $currentHeader }}</a><span class="menu__icon js-fold-btn" >&#10095</span>
                 <ul class="menu__list menu__list--level3">
               {{ end }}
           {{ else if eq $currentLevel 3 }}
@@ -103,7 +103,7 @@ Only allows for h2 and h3 and h4 headers
                 </li></ul>
               {{ else if eq $levelChange 0 }}
                     <li class="menu__item menu__item--level3">
-                    <a href="#{{$currentAnchor}}" class="menu__link--level3">{{ $currentHeader }}</a>
+                    <a href="#{{$currentAnchor}}" class="menu__link menu__link--level3">{{ $currentHeader }}</a>
                     </li>
               {{ end }}
           {{ end }}

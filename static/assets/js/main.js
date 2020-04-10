@@ -15,47 +15,70 @@
     ); */
 
 
-    var toggle_bttns = document.querySelectorAll(".js-navbar__bttn");
+    var menuButtons = document.querySelectorAll(".js-navbar__btn");
+    var foldButtons = document.querySelectorAll(".js-fold-btn");
 
     toggleMenu = function (e) {
-        let bttn = e.target;
+        let btn = e.target;
         const keyName = event.key;
-        console.log(e);
         //if ( e.type=="click" || keyName == " ") { 
 
-            if (bttn.id == "main-navbar-bttn" || bttn.parentElement.id == "main-navbar-bttn") {
-                document.getElementById("main-menu-content").classList.toggle("-js-is-expanded");
-                document.getElementById("main-navbar-bttn").classList.toggle("-js-is-active");
-                document.getElementById("toc-content").classList.remove("-js-is-expanded");
-                document.getElementById("toc-navbar-bttn").classList.remove("-js-is-active");
+            if (btn.id == "main-navbar-btn" || btn.parentElement.id == "main-navbar-btn") {
+                document.getElementById("main-menu-content").classList.toggle("-js-is-visible");
+                document.getElementById("main-navbar-btn").classList.toggle("-js-is-active");
+                document.getElementById("toc-panel").classList.remove("-js-is-visible");
+                document.getElementById("toc-navbar-btn").classList.remove("-js-is-active");
 
-            } else if (bttn.id == "toc-navbar-bttn" || bttn.parentElement.id == "toc-navbar-bttn") {
-                document.getElementById("toc-content").classList.toggle("-js-is-expanded");
-                document.getElementById("toc-navbar-bttn").classList.toggle("-js-is-active");
-                document.getElementById("main-menu-content").classList.remove("-js-is-expanded");
-                document.getElementById("main-navbar-bttn").classList.remove("-js-is-active");
+            } else if (btn.id == "toc-navbar-btn" || btn.parentElement.id == "toc-navbar-btn") {
+                document.getElementById("toc-panel").classList.toggle("-js-is-visible");
+                document.getElementById("toc-navbar-btn").classList.toggle("-js-is-active");
+                document.getElementById("main-menu-content").classList.remove("-js-is-visible");
+                document.getElementById("main-navbar-btn").classList.remove("-js-is-active");
             }
         //}
+    }   
+
+    toggleList = function(e) {
+        let btn = e.target;
+        console.log(e.target);
+        e.target.classList.toggle('-js-is-pressed');
+
+        e.target.parentElement.querySelectorAll(".menu__list")[0].classList.toggle('-js-is-folded');
+        //c=btn.parentElement.children[2];
+        //c.classList.toggle("-js-is-folded");
+
+
     }
 
-    if (toggle_bttns) {
 
-        toggle_bttns.forEach(function (bttn) {
+    if (menuButtons) {
 
-            bttn.addEventListener('click', toggleMenu, false);
-            //bttn.addEventListener('keydown', toggleMenu, false);
+        menuButtons.forEach(function (btn) {
+
+            btn.addEventListener('click', toggleMenu, false);
+            //btn.addEventListener('keydown', toggleMenu, false);
+        })
+
+    }
+
+    if (foldButtons) {
+
+        foldButtons.forEach(function (btn) {
+
+            btn.addEventListener('click', toggleList, false);
+            //btn.addEventListener('keydown', toggleMenu, false);
         })
 
     }
 
     window.onclick = function (event) {
 
-        if (!event.target.matches('.js-navbar__bttn') && !event.target.matches('.js-navbar__icon')) {
+        if (!event.target.matches('.js-navbar__btn') && !event.target.matches('.js-navbar__icon')) {
 
             document.querySelectorAll('.js-menu__list').forEach(item => {
-                item.classList.remove("-js-is-expanded");
+                item.classList.remove("-js-is-visible");
             })
-            document.querySelectorAll('.js-navbar__bttn').forEach(item => {
+            document.querySelectorAll('.js-navbar__btn').forEach(item => {
                 item.classList.remove("-js-is-active");
             })
         }

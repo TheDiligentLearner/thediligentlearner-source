@@ -1,0 +1,270 @@
+.menu {
+
+    //display: flex;
+    //flex-direction: column;
+    position: fixed;
+    width: 100%;
+    bottom: var(--mobile-navbar-height);
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    transform: translateY(calc(100% + var(--mobile-navbar-height)));
+    transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s; /* Amagament */
+    //max-height: 70vh;
+    //overflow: auto;
+
+    &.-js-is-visible { // is-visible?
+        visibility: visible;
+        transform: translateY(0%);
+        transition: transform 0.7s ease-in-out;
+    }
+
+    &__title{
+        position: absolute;
+        display: flex;
+        top: -30px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        height: 30px;
+        width: max-content;
+        z-index: 10;
+        font-size: 16px;
+        color: var(--neutral-clr-lighter);
+        background-color: var(--primary-clr-dark);
+        text-align: center;
+        //width: 60%;
+        align-items: center;
+        border: 2px solid var(--neutral-clr-dark);
+        border-bottom: none;
+        padding: 0px 20px 0px 20px;
+        border-radius: 7px 7px 0 0;
+        z-index: 10;
+
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        //position: fixed;
+        //width: 100%;
+        //bottom: var(--mobile-navbar-height);
+        background: var(--neutral-clr-dark);
+        color: var(--neutral-clr-lighter);
+        margin: 0;
+        padding: 0;
+        z-index: 120;
+        //transform: translateY(calc(100% + var(--mobile-navbar-height)));
+        //transition: transform 0.3s ease-in-out, visibility 0s linear 0.3s; /* Amagament */
+        //max-height: 70vh;
+        //overflow: auto;
+        //transition: max-height 0.8s ease-in-out;
+        font-size: 20px;
+        border-top: 2px solid var(--neutral-clr-dark);
+        overflow-y: auto;
+        max-height: 60vh;
+
+        &--level2 {
+            position: static;
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            max-height: auto;
+            transition: max-height 0.8s ease-in-out;
+            transform: none;
+            padding: 0;
+            overflow: hidden;
+            font-size: 0.8em;
+
+            &.-js-is-folded {
+                max-height: 0;
+            }
+        }
+
+        &--level3 {
+            position: static;
+            grid-column: 1 / 3;
+            grid-row: 2 / 3;
+            max-height: auto;
+            transition: max-height 0.8s ease-in-out;
+            transform: none;
+            overflow: hidden;
+            font-size: 0.8em;
+            font-style: italic;
+            
+
+
+            &.-js-is-folded {
+                max-height: 0;
+
+            }
+        }
+
+
+
+    }
+
+
+    &__item {
+        list-style-type: none;
+        background-color:transparent;
+        margin: 0;
+        padding: 0;
+        text-align: left;
+        //width: 100%;
+        //display: flex;
+        //justify-content: stretch;
+        //align-items: center;
+        ////padding-left: 10px;
+        //border-top: 5px solid red;
+        border-top: 0;
+        border-bottom: 1.2px solid var(--neutral-clr-lighter); // Border to separate level-1
+
+
+        &:hover{
+            //background-color: red;
+        }
+        &--head {
+            display: grid;  // If item is head, I use Grid to place the subelements
+            grid-template-columns: auto min-content; //??
+            grid-template-rows: min-content min-content;
+            ///justify-content: center;
+            ///align-items: center;
+            //width: 100%;
+            //border: 1px solid white;
+            
+            //grid-template-columns: 8fr 1fr;
+            //grid-template-rows: 1fr 1fr;
+
+        }
+
+        &--level2 {
+
+            padding: 0;
+            margin: 0; 
+            //border-top: 0.5px solid white;
+            border-top: 0.5px solid var(--neutral-clr-lighter); // Border to separate level-2
+            border-bottom: 0;
+
+        } 
+        
+        &--level3 {
+            //position: static;
+            //background-color: blue;
+            //margin-left: 15px;
+            padding: 0;
+            margin: 0; 
+            border-top: 0;  // Border to separate level-3
+            border-bottom: 0;
+
+            //border: 1px solid orange;
+            ////padding-left: 20px;
+
+        }
+    }
+
+    &__icon {
+        display: flex;
+        font-size: 16px;
+        background-color: var(--neutral-clr-dark);
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        //width: 100%;
+        //height: 100%;
+        width: 50px;
+        height: 50px;
+
+        cursor: pointer;
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+        transform: rotateZ(90deg);
+        //transition: transform 0.2s ease-in-out;
+        //align-self: center;
+        //border: 0;
+        background-color: transparent;
+
+        &:hover{
+            color: var(--primary-clr);
+        }
+        &.-js-is-pressed{
+            transform: rotateZ(0deg);
+            //transition: transform 0.2s ease-in-out;
+        }
+
+        //&:hover, 
+        //&:hover + .menu__link {
+        //    background: var(--primary-clr-dark);
+        //}
+        //content: "\276F";
+        //display: block;
+        //color: white;
+        //width: 15px;
+        //height: 15px;
+    }
+
+    &__link {
+        display: flex; // To be able to align the text inside using flexbox
+        //flex-grow: 1;
+        background-color: transparent;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin: 0;
+        padding: 10px 0px 10px 10px;  // To separate from borders but when hovering all the full cell change color
+        min-height: 50px;
+        justify-content: left;
+        align-items: center;
+        color: var(--neutral-clr-lighter);
+
+        //border: 2px white solid;
+        //display: flex;
+       
+        //padding: 10px;
+
+        &--level2 {
+            background-color: transparent;
+            padding-left: 20px;
+
+        }
+
+        &--level3 {
+            background-color: transparent;
+            padding-left: 30px;
+
+        }
+        //display: inline-block;
+        //width: 100%;
+        //text-decoration: none;
+        //color: white;
+        //font-size: 20px;
+        //margin: 0;
+
+        &:visited {
+            color: var(--neutral-clr-lighter);
+        }
+        &:hover {
+            background-color: var(--primary-clr-dark);
+        }
+        &:hover + .menu__icon{
+            background-color: var(--primary-clr-dark);
+        }
+    }
+}
+
+/*
+
+nav
+    ul.menu__list
+        li.menu__item
+            a.menu__link
+        li.menu__item
+            a.menu__link
+        li.menu__item menu__item--head
+            a.menu__link 
+            span.menu__icon
+            ul.menu__list menu__list--level2
+                li.menu_item menu__item--level2
+                a.menu__link menu__item--level2    
+
+
+*/
