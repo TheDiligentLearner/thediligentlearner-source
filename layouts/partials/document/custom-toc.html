@@ -48,9 +48,9 @@ Only allows for h2 and h3 and h4 headers
   {{/* We add a virtual top level h2 at the end */}}
   {{ $levelArray = $levelArray | append 1 }}
 
-  <nav id="toc-panel" class="menu">
-    <h1 class="menu__title">Table of Contents</h1>
-    <ul id="toc-content"class="menu__list" >
+  <nav id="toc-panel" class="panel">
+    <h1 class="panel__title">Table of Contents</h1>
+    <ul id="toc-content"class="panel__list" >
 
       {{ range $i, $currentLevel := $levelArray }}
 
@@ -70,40 +70,40 @@ Only allows for h2 and h3 and h4 headers
 
           {{ if eq $currentLevel 1 }}
               {{ if eq $levelChange 0 }}
-                <li class="menu__item">
-                <a href="#{{$currentAnchor}}" class="menu__link">{{ $currentHeader }}</a>  
+                <li class="panel__item">
+                <a href="#{{$currentAnchor}}" class="panel__link">{{ $currentHeader }}</a>  
                 </li>
               {{ else if eq $levelChange 1 }}
-                <li class="menu__item menu__item--head">
-                <a href="#{{$currentAnchor}}" class="menu__link">{{ $currentHeader }}</a><span class="menu__icon js-fold-btn" >&#10095</span>
-                <ul class="menu__list menu__list--level2">
+                <li class="panel__item panel__item--head">
+                <a href="#{{$currentAnchor}}" class="panel__link">{{ $currentHeader }}</a><span class="panel__icon js-fold-btn" >&#10095</span>
+                <ul class="panel__list panel__list--level2">
               {{ end }}
           {{ else if eq $currentLevel 2 }}
               {{ if eq $levelChange -1 }}
-                <li class="menu__item menu__item--level2">
-                <a href="#{{$currentAnchor}}" class="menu__link menu__link--level2">{{ $currentHeader }} </a> 
+                <li class="panel__item panel__item--level2">
+                <a href="#{{$currentAnchor}}" class="panel__link panel__link--level2">{{ $currentHeader }} </a> 
                 </li></ul>
               {{ else if eq $levelChange 0 }}
-                <li class="menu__item menu__item--level2">
-                <a href="#{{$currentAnchor}}" class="menu__link menu__link--level2">{{ $currentHeader }}</a>
+                <li class="panel__item panel__item--level2">
+                <a href="#{{$currentAnchor}}" class="panel__link panel__link--level2">{{ $currentHeader }}</a>
                 </li>
               {{ else if eq $levelChange 1}}
-                <li class="menu__item menu__item--level2 menu__item--head">
-                <a href="#{{$currentAnchor}}" class="menu__link menu__link--level2">{{ $currentHeader }}</a><span class="menu__icon js-fold-btn" >&#10095</span>
-                <ul class="menu__list menu__list--level3">
+                <li class="panel__item panel__item--level2 panel__item--head">
+                <a href="#{{$currentAnchor}}" class="panel__link panel__link--level2">{{ $currentHeader }}</a><span class="panel__icon js-fold-btn" >&#10095</span>
+                <ul class="panel__list panel__list--level3">
               {{ end }}
           {{ else if eq $currentLevel 3 }}
               {{ if eq $levelChange -2 }}
-                <li class="menu__item menu__item--level3">
-                <a href="#{{$currentAnchor}}" class="menu__link menu__link--level3">{{ $currentHeader }}</a> 
+                <li class="panel__item panel__item--level3">
+                <a href="#{{$currentAnchor}}" class="panel__link panel__link--level3">{{ $currentHeader }}</a> 
                 </li></ul></li></ul>
               {{ else if eq $levelChange -1 }}
-                <li class="menu__item menu__item--level3">
-                <a href="#{{$currentAnchor}}" class="menu__link menu__link--level3">{{ $currentHeader }}</a> 
+                <li class="panel__item panel__item--level3">
+                <a href="#{{$currentAnchor}}" class="panel__link panel__link--level3">{{ $currentHeader }}</a> 
                 </li></ul>
               {{ else if eq $levelChange 0 }}
-                    <li class="menu__item menu__item--level3">
-                    <a href="#{{$currentAnchor}}" class="menu__link menu__link--level3">{{ $currentHeader }}</a>
+                    <li class="panel__item panel__item--level3">
+                    <a href="#{{$currentAnchor}}" class="panel__link panel__link--level3">{{ $currentHeader }}</a>
                     </li>
               {{ end }}
           {{ end }}

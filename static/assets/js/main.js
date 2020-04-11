@@ -43,7 +43,7 @@
         console.log(e.target);
         e.target.classList.toggle('-js-is-pressed');
 
-        e.target.parentElement.querySelectorAll(".menu__list")[0].classList.toggle('-js-is-folded');
+        e.target.parentElement.querySelectorAll(".panel__list")[0].classList.toggle('-js-is-folded');
         //c=btn.parentElement.children[2];
         //c.classList.toggle("-js-is-folded");
 
@@ -75,7 +75,7 @@
 
         if (!event.target.matches('.js-navbar__btn') && !event.target.matches('.js-navbar__icon')) {
 
-            document.querySelectorAll('.js-menu__list').forEach(item => {
+            document.querySelectorAll('.js-panel__list').forEach(item => {
                 item.classList.remove("-js-is-visible");
             })
             document.querySelectorAll('.js-navbar__btn').forEach(item => {

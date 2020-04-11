@@ -1,4 +1,4 @@
-.menu {
+.panel {
 
     //display: flex;
     //flex-direction: column;
@@ -13,7 +13,7 @@
     //max-height: 70vh;
     //overflow: auto;
 
-    &.-js-is-visible { // is-visible?
+    &.-js-is-visible { 
         visibility: visible;
         transform: translateY(0%);
         transition: transform 0.7s ease-in-out;
