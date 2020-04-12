@@ -18,6 +18,9 @@
 
 {{ define "navbar" }}
 
-    {{ partial "navigation/navbar/article-navbar.html" . }}
-    
+    {{ if eq $.Params.toc "none" }}
+    {{ partial "navigation/navbar/article-single-notoc-navbar.html" . }}
+    {{ else }}
+    {{ partial "navigation/navbar/article-single-navbar.html" . }}
+    {{ end }}
 {{ end }}
