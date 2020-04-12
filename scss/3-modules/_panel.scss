@@ -165,7 +165,7 @@
         }
     }
 
-    &__icon {
+ &__icon {
         display: flex;
         font-size: 16px;
         background-color: var(--neutral-clr-dark);
@@ -196,17 +196,7 @@
             //transition: transform 0.2s ease-in-out;
         }
 
-        //&:hover, 
-        //&:hover + .menu__link {
-        //    background: var(--primary-clr-dark);
-        //}
-        //content: "\276F";
-        //display: block;
-        //color: white;
-        //width: 15px;
-        //height: 15px;
-    }
-
+        
     &__link {
         display: flex; // To be able to align the text inside using flexbox
         //flex-grow: 1;

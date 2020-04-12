@@ -5,8 +5,7 @@ position: 5
 images:
 date: 2020-03-29T23:57:52+02:00
 lastmod: 2020-03-29T23:57:52+02:00
-tocrender: true
-tocminwords: 0
+toc: detailed
 draft: false
 summary: summary project 2
 ---

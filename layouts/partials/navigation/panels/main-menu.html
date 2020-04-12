@@ -10,12 +10,13 @@
 
 
 
-<nav>
-    <ul id="main-menu-content" class="main-menu__list js-menu__list">
+<nav id="menu-panel" class="panel js-panel">
+    <h1 class="panel__title">Menu</h1>
+    <ul id="menu-content" class="panel__list">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-                <li class="main-menu__item">
-                    <a href="{{ .URL }}" class="main-menu__link">
+                <li class="panel__item">
+                    <a href="{{ .URL }}" class="panel__link">
                         <span class="{{ .Pre }}">  {{ .Name }}</span>
                     </a>
                 </li>

@@ -30,9 +30,19 @@
         &.-js-is-active {
             color: var(--primary-clr);
         }
+
+        &.-js-is-actionable {
+
+        }
     }
 
     &__icon {       // In some mobile browsers, button can not be flex. So we put a span as flex container inside the button for centering
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__label {       // In some mobile browsers, button can not be flex. So we put a span as flex container inside the button for centering
         display: flex;
         align-items: center;
         justify-content: center;

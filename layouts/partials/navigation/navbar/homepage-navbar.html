@@ -1,21 +1,21 @@
 <nav class="navbar"> 
 
-    <button id="back-navbar-btn" class="navbar__btn js-navbar__btn">
-        <span class="material-icons navbar__icon">arrow_back</span>
+    <button id="left-empty-navbar-btn" class="navbar__btn js-navbar__btn">
+        <span></span>
     </button>
 
-    <button id="main-navbar-btn" class="navbar__btn js-navbar__btn">
-        <span class="navbar__icon js-navbar__icon"><span>MENU</span></span>
+    <button id="menu-navbar-btn" class="navbar__btn js-navbar__btn">
+        <span class="navbar__icon js-navbar__label">MENU</span>
     </button>
 
-    <button id="toc-navbar-btn" class="navbar__btn js-navbar__btn">
-        <span class="material-icons navbar__icon js-navbar__icon">list</span>
+    <button id="right-empty-navbar-btn" class="navbar__btn js-navbar__btn">
+        <span></span>
     </button>
 
 </nav>
 
-{{ partial "navigation/main-menu.html" . }}
-{{ partial "document/toc.html" . }}
+{{ partial "navigation/panels/main-menu.html" . }}
+{{/* partial "document/toc.html" . */}}
 
  {{/*   <nav class="navbar">
 

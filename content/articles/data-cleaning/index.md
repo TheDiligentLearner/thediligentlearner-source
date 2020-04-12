@@ -6,8 +6,7 @@ categories: ["machine learning"]
 tags: ["data cleaning", "data exploration", "pandas"]
 series: ["dataexp"]
 series_weight: 0
-tocrender: true
-tocminwords: 0
+toc: detailed
 draft: false
 summary: "This is a summary eu consectetur duis excepteur occaecat duis eu amet sint voluptate elit sunt cupidatat proident sint. Ex irure qui reprehenderit consectetur ad velit id enim reprehenderit dolor mollit. Consequat veniam fugiat excepteur ipsum officia qui aute nisi fugiat reprehenderit et sint labore."
 ---

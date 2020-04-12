@@ -6,8 +6,7 @@ categories: ["deep learning"]
 tags: ["introduction"]
 series: ["dlearn"]
 series_weight: 10
-tocrender: true
-tocminwords: 0
+toc: detailed
 draft: false
 summary: "This is a summary eu consectetur duis excepteur occaecat duis eu amet sint voluptate elit sunt cupidatat proident sint. Ex irure qui reprehenderit consectetur ad velit id enim reprehenderit dolor mollit. Consequat veniam fugiat excepteur ipsum officia qui aute nisi fugiat reprehenderit et sint labore."
 ---

@@ -11,8 +11,13 @@
 <body>
 
         {{ partial "header/header.html" . }}
-        {{ partial "navigation/navbar.html" .}}
-
+        
+        {{/* partial "navigation/navbar.html" . */}}
+        {{ block "navbar" .}}
+        
+            {{ partial "navigation/navbar/article-navbar.html" . }}
+        
+        {{ end }}
         <main class="content">
 
         {{/* Do not show breadcrumb in Homepage */}}

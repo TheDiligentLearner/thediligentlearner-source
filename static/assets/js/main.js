@@ -18,27 +18,60 @@
     var menuButtons = document.querySelectorAll(".js-navbar__btn");
     var foldButtons = document.querySelectorAll(".js-fold-btn");
 
+
+    backAction = function () {
+//        console.log(window.history);
+        window.history.back();
+
+    }
+
     toggleMenu = function (e) {
-        let btn = e.target;
-        const keyName = event.key;
-        //if ( e.type=="click" || keyName == " ") { 
+        //const keyName = event.key;
+        let btn = e.currentTarget; // We use currentTarget (=button) instead of target (button or icon)
+        let btnId = btn.id;
+        const regex = /(.*)-navbar-btn/; // without g, index0 first match, index1 captured group
 
-            if (btn.id == "main-navbar-btn" || btn.parentElement.id == "main-navbar-btn") {
-                document.getElementById("main-menu-content").classList.toggle("-js-is-visible");
-                document.getElementById("main-navbar-btn").classList.toggle("-js-is-active");
-                document.getElementById("toc-panel").classList.remove("-js-is-visible");
-                document.getElementById("toc-navbar-btn").classList.remove("-js-is-active");
+        // Detect which button on navbar has been pressed, using its ID
+        let name = btnId.match(regex)[1];
+        let panelId = name + '-panel';
+        let actionFunction = name + 'Action';
+        let visiblePanel = document.querySelector('.js-panel.-js-is-visible');
+        let activeBtn = document.querySelector('.js-navbar__btn.-js-is-active');
 
-            } else if (btn.id == "toc-navbar-btn" || btn.parentElement.id == "toc-navbar-btn") {
-                document.getElementById("toc-panel").classList.toggle("-js-is-visible");
-                document.getElementById("toc-navbar-btn").classList.toggle("-js-is-active");
-                document.getElementById("main-menu-content").classList.remove("-js-is-visible");
-                document.getElementById("main-navbar-btn").classList.remove("-js-is-active");
+        if (btn.classList.contains('-js-is-actionable')){  
+
+            if (typeof window[actionFunction] === "function") {
+                    document.getElementById(btnId).classList.add("-js-is-active");
+                    window[actionFunction]();
+                    document.getElementById(btnId).classList.remove("-js-is-active");
+                }
+            else {
+            console.log("Action " + actionFunction + " not defined for this button !!!");
             }
-        //}
-    }   
+        }
+        else if (document.getElementById(panelId)) {
+            console.log("entro aqui");
+            if (activeBtn) {
+                visiblePanel.classList.remove("-js-is-visible");
+                activeBtn.classList.remove('-js-is-active');
 
-    toggleList = function(e) {
+                if (btnId != activeBtn.id) {
+                    document.getElementById(panelId).classList.add("-js-is-visible");
+                    document.getElementById(btnId).classList.add("-js-is-active");
+                }
+            }
+            else {
+                document.getElementById(panelId).classList.add("-js-is-visible");
+                document.getElementById(btnId).classList.add("-js-is-active");
+            }
+        }
+        else {
+            console.log("No panel nor function find for this button !!!");
+        }
+
+    }
+
+    toggleList = function (e) {
         let btn = e.target;
         console.log(e.target);
         e.target.classList.toggle('-js-is-pressed');
@@ -71,17 +104,17 @@
 
     }
 
-    window.onclick = function (event) {
+/*     window.onclick = function (event) {
 
-        if (!event.target.matches('.js-navbar__btn') && !event.target.matches('.js-navbar__icon')) {
-
-            document.querySelectorAll('.js-panel__list').forEach(item => {
+        if (!(event.target.classList.contains('js-navbar__btn') || event.target.classList.contains('js-navbar__icon'))) {
+console.log("Aqui també entrooooo");
+            document.querySelectorAll('.js-panel.-js-is-visible').forEach(item => {
                 item.classList.remove("-js-is-visible");
             })
-            document.querySelectorAll('.js-navbar__btn').forEach(item => {
+            document.querySelectorAll('.js-navbar__btn.-js-is-active').forEach(item => {
                 item.classList.remove("-js-is-active");
             })
         }
-    }
+    } */
 
 })();
