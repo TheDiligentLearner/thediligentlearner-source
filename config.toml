@@ -49,6 +49,7 @@ googleAnalytics = "UA-123-45" # Put real value
   description = "Text about my cool site" #Used for metadata if not defined in frontmatter
   images = ["/images/site-feature-image.jpg"] #Used for metadata if not defined in frontmatter
   title = "My cool site" #Used for metadata
+  
 
 [menu]
   [[menu.main]]
@@ -69,19 +70,19 @@ googleAnalytics = "UA-123-45" # Put real value
     url = "/articles/"
     weight = 3
 
-  #  [[menu.main]]
-  #    parent = "articles"
-  #    name = "Browse"
-  #    pre = "mdi mdi-file-document-edit-outline"
-  #    url = "/articles/"
-  #    weight = 4  
+   [[menu.main]]
+     parent = "articles"
+     name = "Browse"
+     pre = "mdi mdi-file-document-edit-outline"
+     url = "/articles/"
+     weight = 4  
 
-  #  [[menu.main]]
-  #    parent = "articles"
-  #    name = "Search"
-  #    pre = "mdi mdi-magnify"
-  #    url = "/search/"
-  #    weight = 4.5  
+   [[menu.main]]
+     parent = "articles"
+     name = "Search"
+     pre = "mdi mdi-magnify"
+     url = "/search/"
+     weight = 4.5  
 
   #  [[menu.main]]
   #    parent = "articles"

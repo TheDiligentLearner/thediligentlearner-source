@@ -229,7 +229,7 @@
         cursor: pointer;
         grid-column: 2 / 3;
         grid-row: 1 / 2;
-        transform: rotateZ(90deg);
+        transform: rotateZ(0deg);
         //transition: transform 0.2s ease-in-out;
         //align-self: center;
         //border: 0;
@@ -239,7 +239,7 @@
             color: var(--primary-clr);
         }
         &.-js-is-pressed{
-            transform: rotateZ(0deg);
+            transform: rotateZ(90deg);
             //transition: transform 0.2s ease-in-out;
         }
 

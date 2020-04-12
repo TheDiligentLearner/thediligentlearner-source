@@ -76,7 +76,7 @@ Only allows for h2 and h3 and h4 headers
               {{ else if eq $levelChange 1 }}
                 <li class="panel__item panel__item--head">
                 <a href="#{{$currentAnchor}}" class="panel__link">{{ $currentHeader }}</a><span class="panel__icon js-fold-btn" >&#10095</span>
-                <ul class="panel__list panel__list--level2">
+                <ul class="panel__list panel__list--level2 -js-is-folded">
               {{ end }}
           {{ else if eq $currentLevel 2 }}
               {{ if eq $levelChange -1 }}
@@ -90,7 +90,7 @@ Only allows for h2 and h3 and h4 headers
               {{ else if eq $levelChange 1}}
                 <li class="panel__item panel__item--level2 panel__item--head">
                 <a href="#{{$currentAnchor}}" class="panel__link panel__link--level2">{{ $currentHeader }}</a><span class="panel__icon js-fold-btn" >&#10095</span>
-                <ul class="panel__list panel__list--level3">
+                <ul class="panel__list panel__list--level3 -js-is-folded">
               {{ end }}
           {{ else if eq $currentLevel 3 }}
               {{ if eq $levelChange -2 }}

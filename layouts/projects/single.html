@@ -11,3 +11,12 @@
 
 {{/* partial "navigation/panels/toc.html" . */}}
 {{ end }}
+
+
+{{ define "navbar" }}
+    {{ if eq $.Params.toc "none" }}
+    {{ partial "navigation/navbar/project-single-notoc-navbar.html" . }}
+    {{ else }}
+    {{ partial "navigation/navbar/project-single-navbar.html" . }}
+    {{ end }}
+{{ end }}
