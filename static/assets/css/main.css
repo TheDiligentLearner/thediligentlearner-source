@@ -1154,7 +1154,7 @@ a {
 }
 
 .header {
-  /* position: absolute;
+  /* position: relative;
     top: 0; */
   width: 100%;
   /* Replaced vw by % to avoid x-scroll bar*/
@@ -1242,6 +1242,18 @@ a {
 }
 
 .navbar__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.navbar__label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1535,44 +1547,6 @@ a {
   border-bottom: 0;
 }
 
-.panel__icon {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 16px;
-  background-color: var(--neutral-clr-dark);
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  text-align: center;
-  margin: 0;
-  padding: 0;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-column: 2 / 3;
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  grid-row: 1 / 2;
-  -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
-  background-color: transparent;
-}
-
-.panel__icon:hover {
-  color: var(--primary-clr);
-}
-
-.panel__icon.-js-is-pressed {
-  -webkit-transform: rotateZ(0deg);
-          transform: rotateZ(0deg);
-}
-
 .panel__link {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1616,6 +1590,44 @@ a {
 
 .panel__link:hover + .menu__icon {
   background-color: var(--primary-clr-dark);
+}
+
+.panel__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+  background-color: var(--neutral-clr-dark);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  grid-row: 1 / 2;
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+  background-color: transparent;
+}
+
+.panel__icon:hover {
+  color: var(--primary-clr);
+}
+
+.panel__icon.-js-is-pressed {
+  -webkit-transform: rotateZ(0deg);
+          transform: rotateZ(0deg);
 }
 
 /*

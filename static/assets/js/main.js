@@ -104,17 +104,25 @@
 
     }
 
-/*     window.onclick = function (event) {
+    //  window.onclick = function (event) {
 
-        if (!(event.target.classList.contains('js-navbar__btn') || event.target.classList.contains('js-navbar__icon'))) {
-console.log("Aqui també entrooooo");
-            document.querySelectorAll('.js-panel.-js-is-visible').forEach(item => {
-                item.classList.remove("-js-is-visible");
-            })
-            document.querySelectorAll('.js-navbar__btn.-js-is-active').forEach(item => {
-                item.classList.remove("-js-is-active");
-            })
-        }
-    } */
+    //     console.log(event.target);
+    //     //console.log(event.currentTarget.classList.contains('js-navbar__btn'));
+
+    //     if (! ((event.target.classList.contains('js-navbar__btn')) || event.target.parent.classList.contains('js-navbar__btn')))){
+
+    //         console.log("tancar panel");
+    //     }
+//         if (!(event.target.classList.contains('js-navbar__btn') || event.target.classList.contains('js-navbar__icon'))) {
+// console.log("Aqui també entrooooo");
+//             document.querySelectorAll('.js-panel.-js-is-visible').forEach(item => {
+//                 item.classList.remove("-js-is-visible");
+//             })
+//             document.querySelectorAll('.js-navbar__btn.-js-is-active').forEach(item => {
+//                 item.classList.remove("-js-is-active");
+//             })
+
+    
+
 
 })();
