@@ -28,3 +28,18 @@ a {
     padding: 15px;
     color: var(--neutral-clr-dark);
 }
+
+.social{
+
+    &__icon{
+    display: inline-block;
+    height: 50px;
+    width: auto;
+    padding: 10px;
+    fill: var(--neutral-clr-dark);
+    }
+
+    &__link:hover &__icon{
+        fill: var(--primary-clr);
+    }
+}

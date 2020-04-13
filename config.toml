@@ -50,6 +50,14 @@ googleAnalytics = "UA-123-45" # Put real value
   images = ["/images/site-feature-image.jpg"] #Used for metadata if not defined in frontmatter
   title = "My cool site" #Used for metadata
   
+  # Social Icons added as inline svg, so they can be customized through CSS
+  # Located at partials/social-icons/ folder
+  linkedinLink = "https://linkedin.com"
+  twitterLink = "https://twitter.com"
+  facebookLink = "https://facebook.com"
+  instagramLink = "https://instagram.com"
+  githubLink = "https://github.com"
+  emailLink = "#"
 
 [menu]
   [[menu.main]]

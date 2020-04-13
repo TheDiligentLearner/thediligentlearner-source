@@ -1140,6 +1140,18 @@ a {
   color: var(--neutral-clr-dark);
 }
 
+.social__icon {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+  padding: 10px;
+  fill: var(--neutral-clr-dark);
+}
+
+.social__link:hover .social__icon {
+  fill: var(--primary-clr);
+}
+
 .breadcrumbs {
   color: var(--neutral-clr);
 }
