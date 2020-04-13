@@ -28,8 +28,10 @@
  
     </main>
 
-    <footer>
-        {{ partial "footer/footer.html" . }}
+    <footer class="footer">
+        {{ block "footer" .}}
+            {{ partial "footer/default-footer.html" . }}
+        {{ end }}
         {{ partial "footer/main-script.html" . }}
         {{ partial "footer/search-script.html" . }}
     </footer>

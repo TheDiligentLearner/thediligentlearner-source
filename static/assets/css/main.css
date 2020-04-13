@@ -1133,6 +1133,11 @@ body {
 
 a {
   text-decoration: none;
+  color: inherit;
+}
+
+a:visited {
+  color: inherit;
 }
 
 .content {
@@ -1142,10 +1147,14 @@ a {
 
 .social__icon {
   display: inline-block;
-  height: 50px;
+  height: 40px;
   width: auto;
   padding: 10px;
-  fill: var(--neutral-clr-dark);
+  fill: var(--neutral-clr);
+}
+
+.social__link {
+  text-decoration: none;
 }
 
 .social__link:hover .social__icon {
@@ -1247,6 +1256,10 @@ a {
   color: var(--neutral-clr-lighter);
   border: 0;
   border-radius: 0;
+}
+
+.navbar__btn:focus {
+  outline: 0;
 }
 
 .navbar__btn.-js-is-active {
@@ -1659,6 +1672,16 @@ nav
 
 
 */
+.footer {
+  font-size: 12px;
+  color: var(--neutral-clr);
+  text-align: center;
+}
+
+.footer__disclaimer {
+  text-decoration: underline;
+}
+
 .article__title {
   color: var(--neutral-clr-dark);
   font-size: 34px;

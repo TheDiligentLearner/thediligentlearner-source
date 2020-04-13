@@ -3,6 +3,7 @@
     padding: 0;
     overflow: visible;
     box-sizing: border-box;
+
 }
 
 html {
@@ -20,7 +21,13 @@ body {
 
 a {
     text-decoration: none;
-   // color: inherit;
+    color: inherit;
+
+    &:visited{
+        color: inherit;
+    }
+    
+
 }
 
 
@@ -33,12 +40,15 @@ a {
 
     &__icon{
     display: inline-block;
-    height: 50px;
+    height: 40px;
     width: auto;
     padding: 10px;
-    fill: var(--neutral-clr-dark);
+    fill: var(--neutral-clr);
     }
 
+    &__link{
+        text-decoration: none;
+    }
     &__link:hover &__icon{
         fill: var(--primary-clr);
     }

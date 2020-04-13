@@ -27,6 +27,9 @@
         border: 0;
         border-radius: 0;
 
+        
+        &:focus {outline:0;}
+
         &.-js-is-active {
             color: var(--primary-clr);
         }
