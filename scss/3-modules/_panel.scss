@@ -177,6 +177,7 @@
         justify-content: left;
         align-items: center;
         color: var(--neutral-clr-lighter);
+        font-size: 18px;
 
         //border: 2px white solid;
         //display: flex;
@@ -247,6 +248,11 @@
 
 }
 
+}
+
+.menu__icon{
+    fill: var(--neutral-clr-lighter);
+    height: 16px;
 }
 /*
 

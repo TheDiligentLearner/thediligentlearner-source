@@ -32,6 +32,10 @@
 
         &.-js-is-active {
             color: var(--primary-clr);
+            
+            & .navbar__icon{
+                fill: var(--primary-clr);
+            }
         }
 
         &.-js-is-actionable {
@@ -43,6 +47,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        fill: var(--neutral-clr-lighter);
+        height: 1em;
     }
 
     &__label {       // In some mobile browsers, button can not be flex. So we put a span as flex container inside the button for centering

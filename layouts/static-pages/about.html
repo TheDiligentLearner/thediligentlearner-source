@@ -1,13 +1,13 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
-<h1>Template static-pages about</h1>
-
-{{ .Content }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
 
 {{ end }}
 
 
 {{ define "navbar" }}
+
     {{ partial "navigation/navbar/about-navbar.html" . }}
+
 {{ end }}

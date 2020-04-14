@@ -1,14 +1,14 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
-<h1>Template static-pages disclaimer</h1>
-
-{{ .Content }}
+    <h1>{{ .Title }}</h1>
+    {{ .Content }}
 
 {{ end }}
 
-{{/*
+
 {{ define "navbar" }}
-    {{ partial "navigation/navbar/about-navbar.html" . }}
+
+    {{ partial "navigation/navbar/default-navbar.html" . }}
+
 {{ end }}
-*/}}
+

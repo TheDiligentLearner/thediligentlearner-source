@@ -1,9 +1,17 @@
-baseURL = "http://example.org/"
+#############################
+#  General configuration    #
+#############################
+
+baseURL = "http://rogergallart.net/"
 languageCode = "en-us"
-title = "RogerGallart Personal Website"
+title = "RogerGallart's Personal Website"
+
+# Pagination for articles list layout
 paginate = 3
 paginatePath = "page"
-googleAnalytics = "UA-123-45" # Put real value
+
+# Hugo widgets
+googleAnalytics = "UA-123-45" # Note: fake value. Put real value !
 
 #enableGitInfo = true
 #disableKinds = ["taxonomyTerm"]
@@ -12,11 +20,6 @@ googleAnalytics = "UA-123-45" # Put real value
 ######################################
 # Groups of configuration parameters #
 ######################################
-
-#[caches]
-#[caches.getjson]
-#dir = ":cacheDir/:project"
-#maxAge = 0
 
 [related]
   threshold = 50 
@@ -32,7 +35,7 @@ googleAnalytics = "UA-123-45" # Put real value
     weight = 10
 
 [outputs]
-  section = ["HTML", "JSON", "RSS"]
+  section = ["HTML", "JSON", "RSS"] # JSON is used by search page
 
 [permalinks]
   articles = "/:section/:year/:month/:filename/"
@@ -45,13 +48,16 @@ googleAnalytics = "UA-123-45" # Put real value
  
 [params]
   ddateFormat = "Jan 2, 2006"
-  homeText = "You just made a Hugo blog from scratch"
-  description = "Text about my cool site" #Used for metadata if not defined in frontmatter
-  images = ["/images/site-feature-image.jpg"] #Used for metadata if not defined in frontmatter
+  homeText = "You just made a Hugo blog from scratch" #???
+
+  # Metadata
+  description = "Text about my cool site" #Default used for metadata (if not defined in frontmatter)
+  images = ["/assets/img/site-feature-image.jpg"] ##Default used for metadata (if not defined in frontmatter)
   title = "My cool site" #Used for metadata
   
-  # Social Icons added as inline svg, so they can be customized through CSS
-  # Located at partials/social-icons/ folder
+  # Social Icons are used as inline svg, so they can be customized through CSS
+  # Located at folder: partials/social-icons/
+  # These are the links attached to each icon
   linkedinLink = "https://linkedin.com"
   twitterLink = "https://twitter.com"
   facebookLink = "https://facebook.com"
@@ -59,66 +65,78 @@ googleAnalytics = "UA-123-45" # Put real value
   githubLink = "https://github.com"
   emailLink = "#"
 
+
+# Main menus
+# "pre" is the svg icon, shown in front of the menu name
 [menu]
+
   [[menu.main]]
     name = "Home"
-    pre = "mdi mdi-home"
+    pre = "icons/home-icon.svg"
     url = "/"
     weight = 1
+
   [[menu.main]]
     name = "About"
-    pre = "mdi mdi-file-document-edit-outline"
+    pre = "icons/person-icon.svg"
     url = "/about/"
     weight = 2  
   
   [[menu.main]]
     identifier = "articles"
     name = "Articles"
-    pre = "mdi mdi-file-document-edit-outline"
+    pre = "icons/project-icon.svg"
     url = "/articles/"
     weight = 3
 
    [[menu.main]]
      parent = "articles"
      name = "Browse"
-     pre = "mdi mdi-file-document-edit-outline"
+     pre = "icons/project-icon.svg"
      url = "/articles/"
      weight = 4  
 
    [[menu.main]]
      parent = "articles"
      name = "Search"
-     pre = "mdi mdi-magnify"
+     pre = "icons/project-icon.svg"
      url = "/search/"
      weight = 4.5  
 
-  #  [[menu.main]]
-  #    parent = "articles"
-  #    name = "Series"
-  #    pre = "mdi mdi-file-document-edit-outline"
-  #    url = "/series/"
-  #    weight = 5  
+   [[menu.main]]
+     parent = "articles"
+     name = "Series"
+     pre = "icons/project-icon.svg"
+     url = "/series/"
+     weight = 5  
 
   [[menu.main]]
     name = "Projects"
-    pre = "mdi mdi-lightbulb-on-outline"
+    pre = "icons/project-icon.svg"
     url = "/projects/"
     weight = 6
 
   [[menu.main]]
     name = "Resources"
-    pre = "mdi mdi-book-open-page-variant"
+    pre = "icons/project-icon.svg"
     url = "/resources/"
     weight = 7
 
   [[menu.main]]
     name = "Pics & Trips"
-    pre = "mdi mdi-airplane"
+    pre = "icons/camera-icon.svg"
     url = "/pics-and-trips/"
     weight = 8
 
   [[menu.main]]
     name = "Contact"
-    pre = "mdi mdi-email-outline"
+    pre = "icons/project-icon.svg"
     url = "/contact/"
     weight = 9
+
+
+# Disable cache during live server
+#[caches]
+#[caches.getjson]
+#dir = ":cacheDir/:project"
+#maxAge = 0

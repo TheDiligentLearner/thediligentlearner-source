@@ -10,13 +10,21 @@
         {{ if .HasChildren }}
             <li class="panel__item panel__item--head">
                 <a href="{{ .URL }}" class="panel__link">
-                    <span class="{{ .Pre }}">  {{ .Name }}</span>
+                    <span>
+                        {{ partialCached (print .Pre) .}} 
+                      </span>&nbsp;
+                      {{ .Name }}
                 </a>
                 <span class="panel__icon js-fold-btn" >&#10095</span>
             <ul class="panel__list panel__list--level2 -js-is-folded">
                 {{ range .Children }}
                     <li class="panel__item panel__item--level2">
-                        <a href="{{ .URL }}" class="panel__link panel__link--level2"><span class="{{ .Pre }}">  {{ .Name }}</span></a>
+                        <a href="{{ .URL }}" class="panel__link panel__link--level2">
+                            <span>
+                                {{ partialCached (print .Pre) .}} 
+                              </span>&nbsp;
+                              {{ .Name }}
+                        </a>
                     </li>
                 {{ end }}
             </ul>
@@ -24,7 +32,10 @@
         {{ else }}
             <li class="panel__item">
                 <a href="{{ .URL }}" class="panel__link">
-                    <span class="{{ .Pre }}">  {{ .Name }}</span>
+                    <span>
+                        {{ partialCached (print .Pre) .}} 
+                      </span>&nbsp;
+                      {{ .Name }}
                 </a>
             </li>
         {{ end }}
@@ -32,18 +43,4 @@
 </ul>
 </nav>
 
-
-<nav id="menu-panel" class="panel js-panel">
-    <h1 class="panel__title">Menu</h1>
-    <ul id="menu-content" class="panel__list">
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-                <li class="panel__item">
-                    <a href="{{ .URL }}" class="panel__link">
-                        <span class="{{ .Pre }}">  {{ .Name }}</span>
-                    </a>
-                </li>
-        {{ end }}
-    </ul>
-</nav>
 

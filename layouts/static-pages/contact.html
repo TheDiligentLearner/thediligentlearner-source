@@ -1,12 +1,13 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
-<h1>Template static-pages contact</h1>
-
-{{ .Content }} 
+    <h1>{{ .Title }}</h1>
+    {{ .Content }} 
 
 {{ end }}
 
+
 {{ define "navbar" }}
+
     {{ partial "navigation/navbar/contact-navbar.html" . }}
+
 {{ end }}

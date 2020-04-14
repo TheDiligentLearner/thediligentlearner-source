@@ -13,22 +13,32 @@
         <a class="headline-hash" href="#{{ anchorize .groupname }}">#</a>
     </h2>
     <p>{{ .description }}</p>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Comments</th>
+            <th>Link</th>
+            <th>Picture</th>
+        </tr>
         {{ range $sorted_items }}
         {{ $imgurl := printf "%simg/%s" $.Permalink .img }}
-        <ul>
-            <li>Name: {{.name}}</li>
-            <li>Type: {{.type}}</li>
-            <li>Description: {{.description}}</li>
-            <li>Comments: {{.comments}}</li>
-            <li>Link: <a href="{{.url}}" target="_blank">Visit web</a></li>
-            <li>Picture: 
+        <tr>
+            <td>{{.name}}</td>
+            <td>{{.type}}</td>
+            <td>{{.description}}</td>
+            <td>{{.comments}}</li>
+            <td><a href="{{.url}}" target="_blank">Visit web</a></td>
+            <td>
                 {{ with .img }}
                 <img src="{{ $imgurl }}" alt="" height="42" width="42">
                 {{ end }}
-            </li>
-            
-        </ul>
+            </td>
+        </tr>   
+        
         {{ end }}
+    </table>
 {{ end }}
 
 <aside>

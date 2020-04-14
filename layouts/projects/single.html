@@ -1,15 +1,12 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
-<p>{{ .Summary }}</p>
+    <h1>{{ .Title }}</h1>
+    <p>{{ .Summary }}</p>
+    {{ partial "document/date-and-tags.html" .}}
+    <br><br>
 
+    {{ partial "document/headline-hash.html" .Content }}
 
-{{ partial "document/date-and-tags.html" .}}
-<br><br>
-
-{{ partial "document/headline-hash.html" .Content }}
-
-{{/* partial "navigation/panels/toc.html" . */}}
 {{ end }}
 
 

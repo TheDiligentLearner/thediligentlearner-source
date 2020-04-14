@@ -1,11 +1,16 @@
 .breadcrumbs {
     color: var(--neutral-clr);
-
-    &__home-icon{
-        font-size: 20px;
-        vertical-align: -3px;
-    }
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    
     &__separator {
         color: var(--primary-clr-dark);
+        padding: 0 5px;
+    }
+
+    & .menu__icon{
+        fill: var(--neutral-clr);
+        height: 0.8em;
     }
 }
