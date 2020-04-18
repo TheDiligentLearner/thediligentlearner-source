@@ -5,15 +5,16 @@
 <section id="">
     <ul>
         {{ range $elem_val := $series_list }}
-        <h2 id="{{ anchorize $elem_val.name }}">{{ $elem_val.name }}
-        <a class="headline-hash" href="#{{ anchorize $elem_val.name }}">#</a></h2>
+            <h2 id="{{ anchorize $elem_val.name }}">{{ $elem_val.name }}
+                <a class="headline-hash" href="#{{ anchorize $elem_val.name }}">#</a>
+            </h2>
 
-        {{ $taxonomy := index $.Site.Taxonomies.series $elem_val.id}}
-        <ul>
-            {{ range $taxonomy.Pages }}
-            <li id=""><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
-            {{ end }}
-        </ul>
+            {{ $taxonomy := index $.Site.Taxonomies.series $elem_val.id}}
+            <ul>
+                {{ range $taxonomy.Pages }}
+                    <li id=""><a href="{{ .Permalink}}">{{ .LinkTitle }}</a></li>
+                {{ end }}
+            </ul>
 
         {{ end }}
 

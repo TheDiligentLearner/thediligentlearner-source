@@ -1,32 +1,30 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
+    <h1>{{ .Title }}</h1>
 
-{{/* {{ range .Pages.ByLastmod.Reverse }} */}}
-{{/* $paginator := .Paginate (where .Data.Pages "Type" "articles") */}}
-{{/* $paginator := .Paginate (where .Data.Pages "Type" "articles") 5 */}}
+    {{ $paginator := .Paginator }}
 
+    {{ range $paginator.Pages.ByLastmod.Reverse }}
 
-{{ $paginator := .Paginator }}
-{{ range $paginator.Pages.ByLastmod.Reverse }}
-<p>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <br>
-    {{ partial "document/date-and-tags.html" . }}
-</p>
-<p>
-    {{ .Summary }}
-</p>
-{{ end }}
+        <p>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <br>
+            {{ partial "document/date-and-tags.html" . }}
+        </p>
+        
+        <p>
+            {{ .Summary }}
+        </p>
 
-{{/* template "_internal/pagination.html" . */}}
+    {{ end }}
 
-{{ partial "navigation/pagination.html" . }}
+    {{ partial "navigation/pagination.html" . }}
 
 
-<aside>{{ partial "taxonomies/categories-list.html" . }}
-    {{ partial "taxonomies/tags-list.html" . }}
-</aside>
+    <aside>
+        {{ partial "taxonomies/categories-list.html" . }}
+        {{ partial "taxonomies/tags-list.html" . }}
+    </aside>
 
 {{ end }}
 

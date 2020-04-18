@@ -10,30 +10,32 @@
 
 <body>
 
-        {{ partial "header/header.html" . }}
+    {{ partial "header/header.html" . }}
         
-        {{/* partial "navigation/navbar.html" . */}}
-        {{ block "navbar" .}}        
-            {{ partial "navigation/navbar/default-navbar.html" . }}
-        {{ end }}
+    {{ block "navbar" .}}        
+        {{ partial "navigation/navbar/default-navbar.html" . }}
+    {{ end }}
 
-        <main class="content">
+    <main class="content">
 
         {{/* Do not show breadcrumb in Homepage */}}
         {{if not .IsHome}}
-        {{ partial "navigation/breadcrumbs.html" . }}
+            {{ partial "navigation/breadcrumbs.html" . }}
         {{ end }}
 
         {{ block "main" . }}{{ end }}
- 
+
     </main>
 
     <footer class="footer">
+
         {{ block "footer" .}}
             {{ partial "footer/default-footer.html" . }}
         {{ end }}
+        
         {{ partial "footer/main-script.html" . }}
         {{ partial "footer/search-script.html" . }}
+    
     </footer>
 
 </body>

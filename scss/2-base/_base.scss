@@ -14,11 +14,17 @@ body {
     // margin: var(--mobile-header-height) 0 var(--mobile-navbar-height) 0;
     margin: 0 0 var(--mobile-navbar-height) 0;
     border: 0;
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--ff-primary);
+    font-weight: var(--fw-n);
     background-color: var(--neutral-clr-lighter);
     position: relative;
+       
 }
 
+main {
+    width: 100%;
+    overflow-x: hidden;  // When put in body, does not work for android devices
+}
 a {
     text-decoration: none;
     color: inherit;
@@ -30,6 +36,15 @@ a {
 
 }
 
+h1, h2, h3, h4 {
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-b);
+}
+
+h1 {font-size: var(--fs-1);}
+h2 {font-size: var(--fs-2);}
+h3 {font-size: var(--fs-3);}
+h4 {font-size: var(--fs-4);}
 
 .content {
     padding: 15px;

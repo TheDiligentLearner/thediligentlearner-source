@@ -1,6 +1,9 @@
 <h2>Browse articles by category</h2>
-<ul>
+<ul class="taxonomy">
     {{ range .Site.Taxonomies.categories }}
-            <li><a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a> {{ .Count }}</li>
+            <li class="taxonomy__term category__term">
+                <a href="{{ .Page.Permalink }}" class="taxonomy__link">
+                    <span>{{ .Page.Title }}</span>
+                    <span class="taxonomy__count">{{ .Count }}</span></a> </li>
     {{ end }}
 </ul>

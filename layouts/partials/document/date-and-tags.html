@@ -3,19 +3,19 @@
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
 
 Last modified:
-<span class="mdi mdi-calendar-today"></span> <time datetime="{{ $modDateTime }}">
+<span>{{ partialCached "icons/calendar-icon.svg" .}}</span> <time datetime="{{ $modDateTime }}">
     {{ .Lastmod.Format $dateFormat }}
 </time>
 <br>
 Created:
-<span class="mdi mdi-calendar-today"></span> <time datetime="{{ $dateTime }}">
+<span>{{ partialCached "icons/calendar-icon.svg" .}}</span> <time datetime="{{ $dateTime }}">
     {{ .PublishDate.Format $dateFormat }}
 </time>
 
 
 {{ with .Params.categories }}
     <br>
-    <span class="mdi mdi-folder-outline"></span>
+    <span>{{ partialCached "icons/folder-icon.svg" .}}</span>
     {{ range . }}
         {{ $href := print (absURL "categories/") (urlize .) }}
         <a class="" href="{{ $href }}">{{ . }}</a>
@@ -23,7 +23,7 @@ Created:
 {{ end }}
 {{ with .Params.tags }}
     <br>
-    <span class="mdi mdi-tag-outline"></span>
+    <span>{{ partialCached "icons/tag-icon.svg" .}}</span>
     {{ range . }}
         {{ $href := print (absURL "tags/") (urlize .) }}
         <a class="" href="{{ $href }}">{{ . }}</a>

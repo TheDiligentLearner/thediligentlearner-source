@@ -1,20 +1,21 @@
 {{ define "main" }}
 
-<h1>{{ .Title }}</h1>
+    <h1>{{ .Title }}</h1>
 
-{{ range .Pages.ByPublishDate.Reverse }}
-<p>
-    <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-    <br>
-    {{ partial "document/date-and-tags.html" . }}
-</p>
-<p>
-    {{ .Summary }}
-</p>
-{{ end }}
+    {{ range .Pages.ByPublishDate.Reverse }}
+        <p>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            <br>
+            {{ partial "document/date-and-tags.html" . }}
+        </p>
+        <p>
+            {{ .Summary }}
+        </p>
+    {{ end }}
 
-<aside>{{ partial "taxonomies/categories-list.html" . }}
-    {{ partial "taxonomies/tags-list.html" . }}
-</aside>
+    <aside>
+        {{ partial "taxonomies/categories-list.html" . }}
+        {{ partial "taxonomies/tags-list.html" . }}
+    </aside>
 
 {{ end }}
