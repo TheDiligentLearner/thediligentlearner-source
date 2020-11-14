@@ -1,6 +1,6 @@
 <nav class="breadcrumbs">
-  <a href="/">{{partialCached "icons/home-icon.svg" .}}</a>
-    {{ template "breadcrumb" dict "currentPage" .Page}}
+  <a href="/" class="breadcrumbs__item --is-clickable">{{partialCached "icons/home-icon.svg" .}}</a>
+    {{ template "breadcrumb" dict "currentPage" .Page "isCurrent" true}}
 </nav>
   
 <!-- templates -->
@@ -8,9 +8,14 @@
 
    {{ if .currentPage.Parent }}
    {{ if ne .currentPage.Parent .IsHome }}
-      {{ template "breadcrumb" dict "currentPage" .currentPage.Parent }}
+      {{ template "breadcrumb" dict "currentPage" .currentPage.Parent "isCurrent" false }}
     {{ end }}
-    <span class="breadcrumbs__separator"> / </span><a href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a> 
+    <span class="breadcrumbs__separator"> / </span>
+    {{ if .isCurrent }}
+      <a class="breadcrumbs__item">{{ .currentPage.Title }}</a> 
+    {{ else }}
+      <a class="breadcrumbs__item --is-clickable" href="{{ .currentPage.Permalink }}">{{ .currentPage.Title }}</a> 
+    {{ end }}
+  {{ end }}
+  {{ end }}
 
-  {{ end }}
-  {{ end }}

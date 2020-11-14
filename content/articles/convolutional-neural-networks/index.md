@@ -1,10 +1,8 @@
 ---
 title: Convolutional Neural Networks
 description: This is the description22
-images:
-    - cnn.png
-date: 2020-03-25T00:07:44+01:00
-lastmod: 2020-03-28T00:07:44+01:00
+date: 2017-07-19T00:07:44+01:00
+lastmod: 2017-08-28T00:07:44+01:00
 categories: ["deep learning"]
 tags: ["cnn", "convolutional neural networks"]
 series: ["dlearn"]

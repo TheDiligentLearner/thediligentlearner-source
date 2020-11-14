@@ -1,11 +1,17 @@
 {{ define "main" }}
 
-    <h1>{{ .Title }}</h1>
+    {{ $img := (.Resources.ByType "image").GetMatch "*cover*" }}
+    {{ with $img }}
+        <img class="article__cover-picture" src="{{ .Permalink }}" alt="{{ $.Title }}">
+    {{ end }}
+
+    <h1 class="article__title">{{ .Title }}</h1>
     <p>{{ partial "document/date-and-tags.html" .}}</p>
-    <p>{{ .Summary }}</p>
+    <p class="article__summary">{{ .Summary }}</p>
 
+    <article class="article__content">
     {{ partial "document/headline-hash.html" .Content }}
-
+    </article>
     {{ partial "taxonomies/related.html" . }}
 
 {{ end }}

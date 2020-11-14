@@ -2,32 +2,42 @@
 {{ $modDateTime := .PublishDate.Format "2006-01-02"}}
 {{ $dateFormat := .Site.Params.dateFormat | default "Jan 2, 2006" }}
 
-Last modified:
-<span>{{ partialCached "icons/calendar-icon.svg" .}}</span> <time datetime="{{ $modDateTime }}">
-    {{ .Lastmod.Format $dateFormat }}
-</time>
-<br>
-Created:
-<span>{{ partialCached "icons/calendar-icon.svg" .}}</span> <time datetime="{{ $dateTime }}">
-    {{ .PublishDate.Format $dateFormat }}
-</time>
+
+<div class="date__group">
+{{ partialCached "icons/calendar-icon.svg" .}}
+<time class="date__item --creation" datetime="{{ $modDateTime }}">{{ .PublishDate.Format $dateFormat }}</time>
+<time class="date__item --lastmod" datetime="{{ $dateTime }}">(Last updated: {{ .Lastmod.Format $dateFormat }})</time>
+</div>
+
+{{/* range $name, $taxonomy := .Site.Taxonomies.categories }}
+{{if eq $name "machine-learning"}}EStà {{end}}
+{{ end  */}}
+
+<div class="taxonomy__group">
+    {{ partialCached "icons/folder-rect-icon.svg" . }}
+    <ul class="taxonomy">
+    {{ range .Site.Taxonomies.categories }} 
+        {{ if in $.Params.categories .Page.Title}}
+        <li class="taxonomy__term category__term">
+            <a href="{{ .Page.Permalink }}" class="taxonomy__link">
+                <span>{{ .Page.Title }}</span>
+                <span class="taxonomy__count">{{ .Count }}</span></a> </li>
+        {{ end }}
+    {{ end }}
+    </ul>
+</div>
+
+    <ul class="taxonomy">
+        {{ range .Site.Taxonomies.tags }} 
+            {{ if in $.Params.tags .Page.Title}}
+            <li class="taxonomy__term tag__term">
+                <a href="{{ .Page.Permalink }}" class="taxonomy__link">
+                    <span>{{ .Page.Title }}</span>
+                    <span class="taxonomy__count">{{ .Count }}</span></a> </li>
+            {{ end }}
+        {{ end }}
+        </ul>
 
 
-{{ with .Params.categories }}
-    <br>
-    <span>{{ partialCached "icons/folder-icon.svg" .}}</span>
-    {{ range . }}
-        {{ $href := print (absURL "categories/") (urlize .) }}
-        <a class="" href="{{ $href }}">{{ . }}</a>
-    {{ end }}
-{{ end }}
-{{ with .Params.tags }}
-    <br>
-    <span>{{ partialCached "icons/tag-icon.svg" .}}</span>
-    {{ range . }}
-        {{ $href := print (absURL "tags/") (urlize .) }}
-        <a class="" href="{{ $href }}">{{ . }}</a>
-    {{ end }}
-{{ end }}
 
 

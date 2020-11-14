@@ -1,8 +1,11 @@
 .breadcrumbs {
+    display: none; // Hidden in mobile design. Set to "Flex" in desktop view
     color: var(--neutral-clr);
-    display: flex;
+    //display: flex;
     flex-direction: row;
     align-items: baseline;
+    //flex-wrap: nowrap;
+    //text-overflow: ellipsis;
     
     &__separator {
         color: var(--primary-clr-dark);
@@ -12,5 +15,19 @@
     & .menu__icon{
         fill: var(--neutral-clr);
         height: 0.8em;
+
+        &:hover{
+            fill: var(--primary-clr);
+        }
     }
+
+    &__item {
+
+        &.--is-clickable {
+            &:hover {
+                color: var(--primary-clr);
+            }
+        }
+    }
+
 }

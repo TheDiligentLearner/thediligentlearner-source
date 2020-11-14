@@ -3,68 +3,84 @@
     padding: 0;
     overflow: visible;
     box-sizing: border-box;
-
 }
 
 html {
     scroll-behavior: smooth;
+    //height: 50%;
+    overflow-y: scroll;
+    //height: calc(100% - var(--mobile-navbar-height));
 }
 
 body {
     // margin: var(--mobile-header-height) 0 var(--mobile-navbar-height) 0;
-    margin: 0 0 var(--mobile-navbar-height) 0;
+    //margin: 0 0 var(--mobile-navbar-height) 0;
     border: 0;
     font-family: var(--ff-primary);
     font-weight: var(--fw-n);
     background-color: var(--neutral-clr-lighter);
     position: relative;
-       
+    //height: 100%; // Test vor vh problem on mobiles
+    margin: 0;
+    padding: 0;
+    min-height: calc(100% - var(--mobile-navbar-height));
+    //height: 100%;
 }
 
-main {
+.content {
     width: 100%;
-    overflow-x: hidden;  // When put in body, does not work for android devices
+    overflow-x: hidden; // When put in body, does not work for android devices
+    padding: 0;
+    color: var(--neutral-clr-dark);
+    height: 100%; // Test vh
+    overflow-y: hidden;
 }
+
 a {
     text-decoration: none;
     color: inherit;
-
-    &:visited{
+    &:visited {
         color: inherit;
     }
-    
-
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: var(--ff-secondary);
     font-weight: var(--fw-b);
 }
 
-h1 {font-size: var(--fs-1);}
-h2 {font-size: var(--fs-2);}
-h3 {font-size: var(--fs-3);}
-h4 {font-size: var(--fs-4);}
-
-.content {
-    padding: 15px;
-    color: var(--neutral-clr-dark);
+h1 {
+    font-size: var(--fs-1);
 }
 
-.social{
+h2 {
+    font-size: var(--fs-2);
+}
 
-    &__icon{
-    display: inline-block;
-    height: 40px;
-    width: auto;
-    padding: 10px;
-    fill: var(--neutral-clr);
+h3 {
+    font-size: var(--fs-3);
+}
+
+h4 {
+    font-size: var(--fs-4);
+    font-style: italic;
+}
+
+.social {
+    &__icon {
+        display: inline-block;
+        height: 40px;
+        width: auto;
+        padding: 10px;
+        fill: var(--neutral-clr);
     }
-
-    &__link{
+    &__link {
         text-decoration: none;
     }
-    &__link:hover &__icon{
+    &__link:hover &__icon {
         fill: var(--primary-clr);
     }
 }

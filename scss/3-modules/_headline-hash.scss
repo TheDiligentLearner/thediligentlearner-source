@@ -1,0 +1,12 @@
+.headline-hash_icon {
+    display: inline-block;
+    fill: var(--neutral-clr-light);
+    height: auto;
+    width: 0.8em;
+    line-height: -1em;
+
+    &:hover {
+        fill: var(--primary-clr-lighter);
+    }
+
+}

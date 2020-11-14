@@ -1,7 +1,7 @@
 ---
 title: "Book Review the Tipping Point"
-date: 2020-03-25T00:06:58+01:00
-lastmod: 2020-03-25T00:06:58+01:00
+date: 2018-01-12T00:06:58+01:00
+lastmod: 2019-02-25T00:06:58+01:00
 categories: ["books"]
 tags: ["epidemics", "sociology"]
 series: ["books"]

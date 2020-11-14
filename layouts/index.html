@@ -1,21 +1,48 @@
+{{ define "header"}}
+<!-- No header -->{{ end }} {{ define "main" }}
 
-{{ define "main" }}
-
-    <h1>{{ .Site.Title }}</h1>
-
-    <h1>h1: ABCDEabcdedaddsa</h1>
-    <h2>h2: ABCDEabcde</h2>
-    <h3>h3: ABCDEabcde</h4>
-    <h4>h4: ABCDEabcde</h4>
-    <p>p: ABCDEabcde</p>
-    p.
-{{ end }}
+<div class="home__container">
 
 
+    <section class="home__section home__cover">
+        {{ partial "icons/web-logo-path.svg" . }} {{ partial "icons/web-name-vect.svg" . }}
+        <p class="home__subtitle">by Roger Gallart</p>
+    </section>
 
-{{ define "navbar" }}
+    <section class="home__section home__about">
+        <h1 class="home__title">Hello</h1>
+        <p class="home__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat ornare urna dolor tempor dolor mattis a. Tellus sed porta molestie magna maecenas nibh integer. Eget sed eu feugiat vitae at nibh. Praesent tincidunt et amet sit ultrices pellentesque
+            elit est. Eget sed eu feugiat vitae at nibh. Praesent tincidunt et amet sit ultrices pellentesque elit est.</p>
+        <button class="home__button">About me</button>
+    </section>
 
-    {{ partial "navigation/navbar/homepage-navbar.html" . }}
-    
-{{ end }}
+    <section class="home__section home__articles">
+        <h1 class="home__title">Latest Articles</h1>
+        <nav class="home__categories"></nav>
+        <div class="home__carrousel"></div>
+        <button class="home__button">View all</button>
 
+    </section>
+
+    <section class="home__section home__projects">
+        <h1 class="home__title">Projects</h1>
+        <p class="home__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat ornare urna dolor tempor dolor mattis a. Tellus sed porta molestie magna maecenas nibh integer. Eget sed eu feugiat vitae at nibh. Praesent tincidunt et amet sit ultrices pellentesque
+            elit est. Eget sed eu feugiat vitae at nibh. Praesent tincidunt et amet sit ultrices pellentesque elit est.</p>
+        <article class="home__project-card"></article>
+        <article class="home__project-card"></article>
+        <article class="home__project-card"></article>
+        <button class="home__button">View all</button>
+
+    </section>
+
+    <section class="home__section home__resources">
+        <h1 class="home__title">Resources & Tools</h1>
+        <p class="home__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Feugiat ornare urna dolor tempor dolor mattis a. Tellus sed porta molestie magna maecenas nibh integer. Eget sed eu feugiat vitae at nibh. Praesent tincidunt et amet sit ultrices pellentesque
+            elit est. Eget sed eu feugiat vitae at nibh. Praesent tincidunt et amet sit ultrices pellentesque elit est.</p>
+        <button class="home__button">Lets go!</button>
+    </section>
+
+
+</div>
+
+{{ end }} {{ define "navbar" }} {{ partial "navigation/navbar/homepage-navbar.html" . }} {{ end }}

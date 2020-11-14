@@ -1,0 +1,25 @@
+{{ $total_count := len (where .Site.RegularPages.ByLastmod.Reverse "Section" "articles") }}
+
+
+<ul class="taxonomy --centered">
+    {{ if eq .Page.Title "Categories" }}
+        <li class="taxonomy__term category__term --is-active">
+    {{ else }}
+    <li class="taxonomy__term category__term">
+    {{ end }}
+        <a href="/categories/" class="taxonomy__link">
+            <span>All</span>
+            <span class="taxonomy__count">{{ $total_count }}</span>
+        </a>
+        </li>
+    {{ range .Site.Taxonomies.categories }}
+        {{ if eq .Page.Title $.Page.Title }}
+            <li class="taxonomy__term category__term --is-active">
+        {{ else }}   
+            <li class="taxonomy__term category__term">
+        {{ end }}
+        <a href="{{ .Page.Permalink }}" class="taxonomy__link">
+        <span>{{ .Page.Title }}</span>
+        <span class="taxonomy__count">{{ .Count }}</span></a> </li>
+    {{ end }}
+</ul>

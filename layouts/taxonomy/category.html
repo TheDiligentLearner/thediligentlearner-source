@@ -1,0 +1,34 @@
+{{ define "main" }}
+
+<aside>
+<nav>
+    <h1>Categories</h1>
+    {{ partial "taxonomies/categories-list-with-active-term.html" . }}
+</nav>
+</aside>
+
+<section class="articles-list">
+
+    {{ $paginator := .Paginator }}
+
+    {{ range $paginator.Pages.ByLastmod.Reverse }}
+
+        <article class="articles-list__item">
+                <h2 class="articles-list__title"><a href="{{ .RelPermalink }}" class="articles-list__link">{{ .Title }}</a></h2>
+                <p class="articles-list__data">{{ partial "document/date-and-tags.html" . }}</p>
+                <p class="articles-list__summary">{{ .Summary }}</p>
+        </article>
+
+    {{ end }}
+
+    {{ partial "navigation/pagination.html" . }}
+</section>
+
+
+{{ end }}
+
+{{ define "navbar" }}
+
+    {{ partial "navigation/navbar/taxonomy-navbar.html" . }}
+
+{{ end }}

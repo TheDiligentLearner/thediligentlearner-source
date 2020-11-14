@@ -1,0 +1,42 @@
+
+.paginator {
+
+    &__list {
+        display: flex;
+
+        &.--is-centered {
+            justify-content: center;
+        }
+      }
+
+    &__previous {
+        margin-right: 15px;
+
+    }
+
+    &__next {
+        margin-left: 15px;
+    }
+
+    &__ellipsis {
+
+    }
+
+    &__link {
+
+        margin: auto 10px;
+
+        &:hover {
+            color: var(--primary-clr-dark);
+        }
+        &.--is-current {
+            font-weight: var(--fw-m);
+        }
+
+        &.--is-disabled {
+            color: var(--neutral-clr-light);
+        }
+    }
+
+
+}

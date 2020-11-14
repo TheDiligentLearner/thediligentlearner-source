@@ -1,0 +1,58 @@
+{{ define "main" }}
+
+{{/*}}    <h1>Archive</h1>
+    <h3>[ Sorted by last modification date ]</h3>
+    {{ range ((where .Site.RegularPages.ByLastmod.Reverse "Section" "articles").GroupByParamDate "lastmod" "2006") }}
+        <section class="archive__group">
+        <h3 class="archive__year">{{ .Key }}</h3>
+        <ul class="archive__list">
+        {{ range .Pages }}
+            {{ $lastmod := (time (.Lastmod.Format "2006-01-02")) }}
+            {{ $created := (time (.Date.Format "2006-01-02")) }}
+            <li class="archive__item">
+                <a class="archive__link" href="{{ .Permalink }}">
+            <span class="archive__lastmod">{{ .Lastmod.Format "Jan 02 - " }}</span>
+            {{ .Title }}</a>
+            {{ if not ($lastmod.Equal $created) }}
+            <span class="archive__created">(Created: {{ .Date.Format "02-01-2006" }})</span>
+            {{ end }}
+            </li>
+        {{ end }}
+        </ul>   
+        </section>
+
+    {{ end }}
+*/}}
+
+
+    <h1>Archive</h1>
+    <h3>[ Sorted by creation date ]</h3>
+    {{ range ((where .Site.RegularPages.ByDate.Reverse "Section" "articles").GroupByDate "2006") }}
+        <section class="archive__group">
+        <h3 class="archive__year">{{ .Key }}</h3>
+        <ul class="archive__list">
+        {{ range .Pages }}
+            {{ $lastmod := (time (.Lastmod.Format "2006-01-02")) }}
+            {{ $created := (time (.Date.Format "2006-01-02")) }}
+            <li class="archive__item">
+                <a class="archive__link" href="{{ .Permalink }}">
+                    <span class="archive__created">{{ .Date.Format "Jan 02 -" }}</span>
+            {{ .Title }}</a>
+            {{ if not ($lastmod.Equal $created) }}
+             <span class="archive__lastmod">(Last modified: {{ .Lastmod.Format "02-01-2006" }})</span>
+
+            {{ end }}
+            </li>
+        {{ end }}
+        </ul>   
+        </section>
+
+    {{ end }}
+{{ end }}
+
+
+{{ define "navbar" }}
+
+    {{ partial "navigation/navbar/taxonomy-navbar.html" . }}
+
+{{ end }}

@@ -1,6 +1,4 @@
-
-
-(function () {
+(function() {
 
     // TEST OVERFLOW
     // var docWidth = document.documentElement.offsetWidth;
@@ -14,18 +12,18 @@
     //   }
     // );
 
-    
+
     // Variables
     var menuButtons = document.querySelectorAll(".js-navbar__btn");
     var foldButtons = document.querySelectorAll(".js-fold-btn");
 
 
     // Functions
-    backAction = function () {
+    backAction = function() {
         window.history.back();
     }
 
-    toggleMenu = function (e) {
+    toggleMenu = function(e) {
         //const keyName = event.key;
         let btn = e.currentTarget; // We use currentTarget (=button) instead of target (button or icon)
         let btnId = btn.id;
@@ -44,12 +42,10 @@
                 document.getElementById(btnId).classList.add("-js-is-active");
                 window[actionFunction]();
                 document.getElementById(btnId).classList.remove("-js-is-active");
-            }
-            else {
+            } else {
                 console.log("Action " + actionFunction + " not defined for this button !!!");
             }
-        }
-        else if (document.getElementById(panelId)) {
+        } else if (document.getElementById(panelId)) {
             console.log("entro aqui");
             if (activeBtn) {
                 visiblePanel.classList.remove("-js-is-visible");
@@ -59,37 +55,44 @@
                     document.getElementById(panelId).classList.add("-js-is-visible");
                     document.getElementById(btnId).classList.add("-js-is-active");
                 }
-            }
-            else {
+            } else {
                 document.getElementById(panelId).classList.add("-js-is-visible");
                 document.getElementById(btnId).classList.add("-js-is-active");
             }
-        }
-        else {
+        } else {
             console.log("No panel nor function find for this button !!!");
         }
 
     }
 
-    toggleList = function (e) {
+    toggleList = function(e) {
         let btn = e.target;
         console.log(e.target);
         e.target.classList.toggle('-js-is-pressed');
         e.target.parentElement.querySelectorAll(".panel__list")[0].classList.toggle('-js-is-folded');
     }
 
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    //let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--inner-vh', `${window.innerHeight * 0.01}px`);
+    document.documentElement.style.setProperty('--outer-vh', `${window.outerHeight * 0.01}px`);
+    document.documentElement.style.setProperty('--screen-vh', `${window.screen.height * 0.01}px`);
+    document.documentElement.style.setProperty('--inner-vw', `${window.innerWidth * 0.01}px`);
+    document.documentElement.style.setProperty('--outer-vw', `${window.outerWidth * 0.01}px`);
+    document.documentElement.style.setProperty('--screen-vw', `${window.screen.width * 0.01}px`);
 
 
     // Event listeners
     if (menuButtons) {
-        menuButtons.forEach(function (btn) {
+        menuButtons.forEach(function(btn) {
             btn.addEventListener('click', toggleMenu, false);
             //btn.addEventListener('keydown', toggleMenu, false);
         })
     }
 
     if (foldButtons) {
-        foldButtons.forEach(function (btn) {
+        foldButtons.forEach(function(btn) {
             btn.addEventListener('click', toggleList, false);
             //btn.addEventListener('keydown', toggleMenu, false);
         })

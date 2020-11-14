@@ -1,61 +1,44 @@
 :root {
-
     /* FONTS */
-
     // Font types
     --ff-primary: 'Montserrat', sans-serif;
     --ff-secondary: 'Roboto Slab', serif;
-
     // Font weights
     --fw-n: 400; // normal
     --fw-m: 600; // medium
     --fw-b: 800; // bold
-
     // Font sizes
-    --fs-1: 3rem;   // h1
-    --fs-2: 2.5rem;   // h2
-    --fs-3: 2rem;   // h3
+    --fs-1: 3rem; // h1
+    --fs-2: 2rem; // h2
+    --fs-3: 1.5rem; // h3
     --fs-4: 1rem; // h4
-    --fs-p: 1rem;   // paragraph
+    --fs-p: 1rem; // paragraph
     --fs-s: 0.7rem; // small
-    --fs-xs:0.6rem; // super-small
-
-
+    --fs-xs: 0.6rem; // super-small
     /* SPACERS */
-
     --spacer: 1rem; // normal
     --spacer-md: calc(var(--spacer) * 2); // medium
     --spacer-lg: calc(var(--spacer) * 3); // large
-
-
     /* BOX DECORATIONS */
-
-    --shadow: 0 0 1em rgba(0,0,0,0.25);
-    --br: 10px; // border radius
-
-
+    --shadow: 0 0 1em rgba(0, 0, 0, 0.25);
+    --br: 5px; // border radius
     /* COLORS */
-
     // Primary colors
-    --primary-clr-lighter: hsl(22, 100%, 90%); // Background
-    --primary-clr-light: hsl(22, 100%, 65%); // Decoration
-    --primary-clr: hsl(22, 100%, 50%); // Decoration (main)
-    --primary-clr-dark: hsl(22, 100%, 45%); // Text
-
+    // --primary-clr-lighter: hsl(22, 100%, 90%); // Background
+    --primary-clr-lighter: hsl(189, 49%, 48%); // Background
+    --primary-clr-light: hsl(189, 100%, 33%); // Decoration
+    --primary-clr: hsl(189, 100%, 24%); // Decoration (main)
+    --primary-clr-dark: hsl(189, 98%, 18%); // Text
     // Secondary colors
-    --secondary-clr-lighter: hsl(209, 100%, 90%); // Background
-    --secondary-clr-light: hsl(209, 100%, 65%); // Decoration
-    --secondary-clr: #0084ff; // Decoration (main)
-    --secondary-clr-dark: hsl(209, 100%, 35%); // Text
-
+    --secondary-clr-lighter: hsl(45, 100%, 68%); // Background
+    --secondary-clr-light: hsl(45, 100%, 57%); // Decoration
+    --secondary-clr: hsl(45, 100%, 43%); // Decoration (main)
+    --secondary-clr-dark: hsl(45, 100%, 31%); // Text
     // Neutral colors
     --neutral-clr-lighter: hsl(0, 0%, 97%); // Non-pure white background
     --neutral-clr-light: hsl(0, 0%, 90%); // Background
     --neutral-clr: hsl(0, 0%, 40%); // Text
     --neutral-clr-dark: hsl(0, 0%, 7%); // Text and non-pure black background
-
-
-
     --mobile-header-height: 75px;
     --mobile-navbar-height: 55px;
 }

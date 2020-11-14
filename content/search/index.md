@@ -5,9 +5,3 @@ type: "static-pages"
 layout: "search"
 disable_comments: true
 ---
-
-
-
-<input id="search-input" type="text" placeholder="Loading..." name="search">
-
-<section id="search-results" class="search"></section>

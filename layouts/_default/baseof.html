@@ -10,7 +10,9 @@
 
 <body>
 
-    {{ partial "header/header.html" . }}
+    {{ block "header" .}}
+        {{ partial "header/header.html" . }}
+    {{ end }}
         
     {{ block "navbar" .}}        
         {{ partial "navigation/navbar/default-navbar.html" . }}

@@ -15,8 +15,13 @@
     --border-radius-term: var(--br);
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
+
+    &.--centered {
+        justify-content: center;
+
+    }
     &__term {
         font-size: var(--ft-sz-term);
         display: inline-flex;
@@ -24,11 +29,12 @@
         align-items: center;
         background-color: var(--bg-clr-term);
         color: var(--ft-clr-term);
-        padding: 0.4em 0.5em;
+        padding: 0.1em 0.5em;
         margin: 0.2em 0.1em;
         border: var(--border-term);
         border-radius: var(--border-radius-term);
         list-style-type: none;
+
 
         &:hover {
             box-shadow: var(--shadow);
@@ -61,6 +67,10 @@
         --border-count: 0;
         --bg-clr-term: var(--secondary-clr-lighter);
         --ft-clr-count: var(--neutral-clr);
+
+        &.--is-active {
+            --bg-clr-term: var(--secondary-clr-light);
+        }        
     }
 }
 
@@ -72,5 +82,9 @@
         --border-count: 0;
         --bg-clr-term: var(--primary-clr-lighter);
         --ft-clr-count: var(--neutral-clr);
+
+        &.--is-active {
+            --bg-clr-term: var(--primary-clr-light);
+        }
     }
 }

@@ -1,0 +1,19 @@
+<nav class="navbar"> 
+
+    <button id="back-navbar-btn" class="navbar__btn js-navbar__btn -js-is-actionable">
+                <span class="navbar__icon">{{ partialCached "icons/back-arrow-icon.svg" . }}</span>
+
+    </button>
+
+    <button id="menu-navbar-btn" class="navbar__btn js-navbar__btn">
+        <span class="navbar__icon js-navbar__label">MENU</span>
+    </button>
+
+    <button id="search-navbar-btn" class="navbar__btn js-navbar__btn">
+        <span class="navbar__icon">{{ partialCached "icons/magnifier-icon.svg" . }}</span>
+    </button>
+
+</nav>
+
+{{ partial "navigation/panels/menu-panel.html" . }}
+{{ partial "navigation/panels/taxonomy-panel.html" . }}

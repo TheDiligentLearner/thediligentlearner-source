@@ -1,0 +1,36 @@
+
+.archive {
+
+    &__group {
+        margin: 20px 0;
+    }
+    &__year{
+
+    }
+
+    &__list {
+        list-style: none;
+    }
+
+    &__item {
+
+    }
+
+    &__link {
+        
+        &:hover {
+            color: var(--primary-clr);
+        }
+    }
+
+    &__lastmod {
+        color: var(--secondary-clr);
+        font-size: var(--fs-s);
+        font-style: italic;
+    }
+
+    &__created {
+        font-weight: var(--fw-m);
+
+    }
+}
