@@ -1,10 +1,10 @@
-#############################
-#  General configuration    #
-#############################
+####################################################
+#  General configuration - The Diligent Learner    #
+####################################################
 
-baseURL = "http://rogergallart.net/"
+baseURL = "http://thediligentlearner.com/"
 languageCode = "en-us"
-title = "RogerGallart's Personal Website"
+title = "The Diligent Learner"
 
 # Pagination for articles list layout
 paginate = 20
