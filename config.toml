@@ -76,11 +76,11 @@ googleAnalytics = "UA-123-45" # Note: fake value. Put real value !
     url = "/"
     weight = 1
 
-  [[menu.main]]
-    name = "About"
-    pre = "icons/person-icon.svg"
-    url = "/about/"
-    weight = 2  
+  #[[menu.main]]
+  #  name = "About"
+  #  pre = "icons/person-icon.svg"
+  #  url = "/about/"
+  #  weight = 2  
   
   [[menu.main]]
     identifier = "articles"
@@ -128,12 +128,17 @@ googleAnalytics = "UA-123-45" # Note: fake value. Put real value !
   #  url = "/pics-and-trips/"
   #  weight = 8
 
-  [[menu.main]]
-    name = "Contact"
-    pre = "icons/project-icon.svg"
-    url = "/contact/"
-    weight = 9
+  #[[menu.main]]
+  #  name = "Contact"
+  #  pre = "icons/project-icon.svg"
+  #  url = "/contact/"
+  #  weight = 9
 
+  [[menu.main]]
+    name = "About"
+    pre = "icons/person-icon.svg"
+    url = "/about/"
+    weight = 10
 
 # Disable cache during live server
 #[caches]
