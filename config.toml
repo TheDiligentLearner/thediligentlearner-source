@@ -1,6 +1,6 @@
-####################################################
-#   General configuration - The Diligent Learner   #
-####################################################
+###########################
+#   General configuration #
+###########################
 
 baseURL = "http://thediligentlearner.com/"
 languageCode = "en-us"
