@@ -1,6 +1,6 @@
-###########################
-#   General configuration #
-###########################
+############################
+#   General configuration  #
+############################
 
 baseURL = "https://thediligentlearner.github.io/"
 languageCode = "en-us"
