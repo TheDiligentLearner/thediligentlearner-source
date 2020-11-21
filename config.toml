@@ -85,28 +85,28 @@ googleAnalytics = "UA-123-45" # Note: fake value. Put real value !
   [[menu.main]]
     identifier = "articles"
     name = "Articles"
-    pre = "icons/project-icon.svg"
+    pre = "icons/pencil-icon.svg"
     url = "/articles/"
     weight = 3
 
    [[menu.main]]
      parent = "articles"
      name = "Browse"
-     pre = "icons/project-icon.svg"
+     pre = "icons/explore-icon.svg"
      url = "/articles/"
      weight = 4  
 
    [[menu.main]]
      parent = "articles"
      name = "Search"
-     pre = "icons/project-icon.svg"
+     pre = "icons/magnifier2-icon.svg"
      url = "/search/"
      weight = 4.5  
 
    [[menu.main]]
      parent = "articles"
      name = "Series"
-     pre = "icons/project-icon.svg"
+     pre = "icons/star-icon.svg"
      url = "/series/"
      weight = 5  
 
@@ -118,7 +118,7 @@ googleAnalytics = "UA-123-45" # Note: fake value. Put real value !
 
   [[menu.main]]
     name = "Resources"
-    pre = "icons/project-icon.svg"
+    pre = "icons/tool-icon.svg"
     url = "/resources/"
     weight = 7
 
